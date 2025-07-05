@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard - AI Strategy Hub</title>
+    <meta name="description" content="Executive dashboard for AI strategy insights, ROI analysis, and leadership reporting">
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .metric-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .metric-card.blue {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .metric-card.green {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .metric-card.purple {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        .executive-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Hub
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">📊 Executive Dashboard</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="refreshData" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button id="exportReport" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                        Export Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Executive Summary -->
+    <section class="executive-summary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4">Monthly AI Strategy Report</h2>
+                <p class="text-xl opacity-90" id="reportDate">January 2025</p>
+            </div>
+            
+            <!-- 30-Second Summary -->
+            <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4">📝 30-Second Executive Summary</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div>
+                        <div class="font-semibold mb-2">🎯 Key Win</div>
+                        <div id="keyWin">Cursor pilot completed with 8.5/10 success rate, demonstrating 35% productivity improvement for complex tasks</div>
+                    </div>
+                    <div>
+                        <div class="font-semibold mb-2">🚀 New Opportunity</div>
+                        <div id="newOpportunity">AWS Strands Agents SDK offers enterprise-grade AI development platform with production-ready capabilities</div>
+                    </div>
+                    <div>
+                        <div class="font-semibold mb-2">💰 Resource Need</div>
+                        <div id="resourceNeed">$150K budget request for Cursor enterprise licenses and advanced training program expansion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">Key Performance Indicators</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                
+                <!-- ROI Metric -->
+                <div class="metric-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold mb-2" id="monthlyROI">$2.4M</div>
+                    <div class="text-sm opacity-75">Monthly ROI</div>
+                    <div class="text-xs mt-2 bg-white bg-opacity-20 rounded px-2 py-1">
+                        ↗ 18% vs last month
+                    </div>
+                </div>
+
+                <!-- Adoption Rate -->
+                <div class="metric-card blue rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold mb-2" id="adoptionRate">87%</div>
+                    <div class="text-sm opacity-75">Tool Adoption Rate</div>
+                    <div class="text-xs mt-2 bg-white bg-opacity-20 rounded px-2 py-1">
+                        GitHub Copilot leading
+                    </div>
+                </div>
+
+                <!-- Productivity Gain -->
+                <div class="metric-card green rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold mb-2" id="productivityGain">+32%</div>
+                    <div class="text-sm opacity-75">Productivity Gain</div>
+                    <div class="text-xs mt-2 bg-white bg-opacity-20 rounded px-2 py-1">
+                        Average across all tools
+                    </div>
+                </div>
+
+                <!-- Developer Satisfaction -->
+                <div class="metric-card purple rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold mb-2" id="satisfaction">4.2/5</div>
+                    <div class="text-sm opacity-75">Developer Satisfaction</div>
+                    <div class="text-xs mt-2 bg-white bg-opacity-20 rounded px-2 py-1">
+                        Based on 847 responses
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- ROI Trend Chart -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Monthly ROI Trend</h4>
+                    <div class="chart-container">
+                        <canvas id="roiChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tool Adoption Chart -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Tool Adoption by Category</h4>
+                    <div class="chart-container">
+                        <canvas id="adoptionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Productivity Impact -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Productivity Impact by Tool</h4>
+                    <div class="chart-container">
+                        <canvas id="productivityChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Cost Analysis -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Cost vs Benefit Analysis</h4>
+                    <div class="chart-container">
+                        <canvas id="costBenefitChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Insights -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">Strategic Insights & Recommendations</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Investment Recommendations -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">💡 Investment Recommendations</h4>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="font-medium text-green-800">High Priority: Cursor Enterprise</div>
+                            <div class="text-sm text-gray-600">ROI: 240% | Investment: $150K | Timeline: Q1 2025</div>
+                            <div class="text-sm text-gray-500 mt-1">Pilot shows 35% productivity gain for complex tasks</div>
+                        </div>
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <div class="font-medium text-yellow-800">Medium Priority: Advanced Training</div>
+                            <div class="text-sm text-gray-600">ROI: 180% | Investment: $75K | Timeline: Q2 2025</div>
+                            <div class="text-sm text-gray-500 mt-1">Context engineering certification program</div>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <div class="font-medium text-blue-800">Evaluate: AWS Strands Agents</div>
+                            <div class="text-sm text-gray-600">ROI: TBD | Investment: $25K pilot | Timeline: Q2 2025</div>
+                            <div class="text-sm text-gray-500 mt-1">Enterprise-grade AI agent development platform</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Assessment -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">⚠️ Risk Assessment</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-red-500 rounded-full mt-1.5"></div>
+                            <div>
+                                <div class="font-medium text-red-800">Vendor Concentration Risk</div>
+                                <div class="text-sm text-gray-600">87% reliance on GitHub Copilot</div>
+                                <div class="text-sm text-gray-500">Mitigation: Diversify with Cursor and AWS tools</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full mt-1.5"></div>
+                            <div>
+                                <div class="font-medium text-yellow-800">Skills Gap</div>
+                                <div class="text-sm text-gray-600">27% of developers lack advanced prompt skills</div>
+                                <div class="text-sm text-gray-500">Mitigation: Accelerated training program</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mt-1.5"></div>
+                            <div>
+                                <div class="font-medium text-green-800">Security Compliance</div>
+                                <div class="text-sm text-gray-600">All tools meet enterprise security standards</div>
+                                <div class="text-sm text-gray-500">Regular audits and compliance monitoring</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Intelligence -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">🏆 Competitive Position</h3>
+            <div class="bg-gray-50 rounded-lg p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-600 mb-2">Leading</div>
+                        <div class="text-sm text-gray-600">AI Tool Adoption</div>
+                        <div class="text-xs text-gray-500 mt-1">Top 15% in insurance industry</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600 mb-2">Advanced</div>
+                        <div class="text-sm text-gray-600">Training Programs</div>
+                        <div class="text-xs text-gray-500 mt-1">Ahead of major competitors</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-yellow-600 mb-2">Opportunity</div>
+                        <div class="text-sm text-gray-600">Context Engineering</div>
+                        <div class="text-xs text-gray-500 mt-1">First-mover advantage available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Quarter Priorities -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">🎯 Q2 2025 Priorities</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Strategic Initiatives</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Expand Cursor pilot to 200 developers</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Launch context engineering certification</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Evaluate AWS Strands Agents SDK</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Implement advanced metrics dashboard</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Key Decisions Needed</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2"></div>
+                            <div>
+                                <div class="font-medium text-gray-700">Cursor Enterprise Budget Approval</div>
+                                <div class="text-sm text-gray-500">Due: February 15, 2025</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-2"></div>
+                            <div>
+                                <div class="font-medium text-gray-700">Training Resource Allocation</div>
+                                <div class="text-sm text-gray-500">Due: March 1, 2025</div>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2"></div>
+                            <div>
+                                <div class="font-medium text-gray-700">Vendor Diversification Strategy</div>
+                                <div class="text-sm text-gray-500">Due: March 15, 2025</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">AI Strategy Hub - Executive Dashboard | Last updated: <span id="lastUpdated"></span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/executive-dashboard.js"></script>
+</body>
+</html>

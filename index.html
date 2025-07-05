@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationwide AI Strategy Hub</title>
+    <meta name="description" content="AI Developer Tooling Strategy and Intelligence System for Nationwide Insurance">
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold text-gray-900">🤖 Nationwide AI Strategy Hub</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <select id="userRole" class="appearance-none bg-white border border-gray-300 rounded-md px-3 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="developer">Developer</option>
+                            <option value="leadership">Leadership</option>
+                            <option value="strategy">Strategy Team</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <i class="fas fa-chevron-down text-gray-400"></i>
+                        </div>
+                    </div>
+                    <button id="settingsBtn" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">AI Strategy Intelligence System</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Empowering 1000+ developers with the right AI tools, training, and insights</p>
+            <div class="flex justify-center space-x-4">
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold" id="totalDevelopers">1,247</div>
+                    <div class="text-sm opacity-75">Developers</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold" id="toolsTracked">23</div>
+                    <div class="text-sm opacity-75">Tools Tracked</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold" id="monthlyROI">$2.4M</div>
+                    <div class="text-sm opacity-75">Monthly ROI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portal Navigation -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-900">Choose Your Portal</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Leadership Portal -->
+                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-2xl text-blue-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-4 text-gray-900">Executive Dashboard</h4>
+                        <p class="text-gray-600 mb-6">Strategic insights, ROI analysis, and executive-level reporting for leadership decision making.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li>• Monthly performance reports</li>
+                            <li>• Investment recommendations</li>
+                            <li>• Competitive intelligence</li>
+                            <li>• Risk assessment</li>
+                        </ul>
+                        <a href="leadership/" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+                            Access Dashboard
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Developer Portal -->
+                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-code text-2xl text-green-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-4 text-gray-900">Developer Hub</h4>
+                        <p class="text-gray-600 mb-6">Training, tools, and resources for developers to master AI-powered development.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li>• Skill assessments</li>
+                            <li>• Training pathways</li>
+                            <li>• Tool comparisons</li>
+                            <li>• Community contributions</li>
+                        </ul>
+                        <a href="developers/" class="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors">
+                            Start Learning
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Strategy Portal -->
+                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-brain text-2xl text-purple-600"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-4 text-gray-900">Strategy Command Center</h4>
+                        <p class="text-gray-600 mb-6">Advanced intelligence, tool evaluation, and strategic planning for AI strategy leaders.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li>• Tool discovery pipeline</li>
+                            <li>• Evaluation frameworks</li>
+                            <li>• Trend analysis</li>
+                            <li>• Resource planning</li>
+                        </ul>
+                        <a href="strategy/" class="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors">
+                            Access Command Center
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Insights -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-900">Latest Intelligence</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">GitHub Copilot Adoption</p>
+                            <p class="text-2xl font-bold text-gray-900">87%</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-blue-600"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">↗ 12% from last month</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Cursor Pilot Success</p>
+                            <p class="text-2xl font-bold text-gray-900">8.5/10</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-star text-green-600"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Pilot complete - recommend expansion</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Training Completion</p>
+                            <p class="text-2xl font-bold text-gray-900">73%</p>
+                        </div>
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-yellow-600"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Prompt engineering basics</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">New Tools Discovered</p>
+                            <p class="text-2xl font-bold text-gray-900">5</p>
+                        </div>
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-search text-purple-600"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">This week - 3 for evaluation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Updates -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-900">Recent Updates</h3>
+            <div class="max-w-3xl mx-auto">
+                <div class="flow-root">
+                    <ul class="-mb-8">
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"></span>
+                                <div class="relative flex space-x-3">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <div>
+                                            <p class="text-sm text-gray-900">
+                                                <strong>Cursor Pilot Complete</strong> - Evaluation score: 8.5/10
+                                            </p>
+                                            <p class="text-sm text-gray-500">January 15, 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="relative pb-8">
+                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"></span>
+                                <div class="relative flex space-x-3">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-plus text-white text-sm"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <div>
+                                            <p class="text-sm text-gray-900">
+                                                <strong>New Tool Added</strong> - Windsurf IDE added to evaluation queue
+                                            </p>
+                                            <p class="text-sm text-gray-500">January 12, 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="relative">
+                                <div class="relative flex space-x-3">
+                                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-brain text-white text-sm"></i>
+                                    </div>
+                                    <div class="min-w-0 flex-1">
+                                        <div>
+                                            <p class="text-sm text-gray-900">
+                                                <strong>Training Update</strong> - Context engineering module launched
+                                            </p>
+                                            <p class="text-sm text-gray-500">January 10, 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">AI Strategy Hub</h4>
+                    <p class="text-gray-400">Empowering Nationwide developers with AI intelligence and strategic insights.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="leadership/" class="hover:text-white">Executive Dashboard</a></li>
+                        <li><a href="developers/" class="hover:text-white">Developer Hub</a></li>
+                        <li><a href="strategy/" class="hover:text-white">Strategy Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="data/tools.json" class="hover:text-white">Tools Database</a></li>
+                        <li><a href="data/training.json" class="hover:text-white">Training Data</a></li>
+                        <li><a href="data/metrics.json" class="hover:text-white">Metrics API</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="docs/" class="hover:text-white">Documentation</a></li>
+                        <li><a href="https://github.com/your-org/ai-strategy-hub" class="hover:text-white">GitHub</a></li>
+                        <li><a href="mailto:ai-strategy@nationwide.com" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Nationwide Insurance. AI Strategy Hub v1.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold">Settings</h3>
+                    <button id="closeSettings" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">AI API Key (Optional)</label>
+                        <input type="password" id="apiKey" placeholder="Enter your Gemini API key for enhanced features" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p class="text-sm text-gray-500 mt-1">Used for personalized AI insights. Stored locally only.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Theme</label>
+                        <select id="theme" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="auto">Auto</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-end space-x-3">
+                        <button id="cancelSettings" class="px-4 py-2 text-gray-600 hover:text-gray-800">Cancel</button>
+                        <button id="saveSettings" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy Command Center - AI Strategy Hub</title>
+    <meta name="description" content="Advanced AI strategy intelligence, tool evaluation, and strategic planning">
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .command-center-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .intelligence-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .evaluation-pipeline {
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+        }
+        .trend-indicator {
+            animation: pulse 2s infinite;
+        }
+        .discovery-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .discovery-card:hover {
+            border-left-color: #3b82f6;
+            transform: translateX(4px);
+        }
+        .strategic-metric {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Hub
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">🧠 Strategy Command Center</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="runDiscovery" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
+                        Run Discovery
+                    </button>
+                    <button id="generateReport" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                        Generate Report
+                    </button>
+                    <button id="intelligenceSettings" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Command Center Header -->
+    <section class="command-center-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4">AI Strategy Intelligence Command Center</h2>
+                <p class="text-xl opacity-90">Your central hub for AI landscape intelligence and strategic decision making</p>
+            </div>
+            
+            <!-- Real-time Intelligence -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="intelligence-card rounded-lg p-4 text-center text-white">
+                    <div class="text-2xl font-bold" id="toolsDiscovered">5</div>
+                    <div class="text-sm opacity-75">New Tools This Week</div>
+                    <div class="text-xs mt-1 trend-indicator">🔥 Trending</div>
+                </div>
+                <div class="intelligence-card rounded-lg p-4 text-center text-white">
+                    <div class="text-2xl font-bold" id="evaluationsActive">3</div>
+                    <div class="text-sm opacity-75">Active Evaluations</div>
+                    <div class="text-xs mt-1">⏱️ In Progress</div>
+                </div>
+                <div class="intelligence-card rounded-lg p-4 text-center text-white">
+                    <div class="text-2xl font-bold" id="strategicAlerts">2</div>
+                    <div class="text-sm opacity-75">Strategic Alerts</div>
+                    <div class="text-xs mt-1">⚠️ Requires Attention</div>
+                </div>
+                <div class="intelligence-card rounded-lg p-4 text-center text-white">
+                    <div class="text-2xl font-bold" id="competitiveIntel">97%</div>
+                    <div class="text-sm opacity-75">Intel Coverage</div>
+                    <div class="text-xs mt-1">📊 Comprehensive</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Discovery Pipeline -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">🔍 Tool Discovery Pipeline</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Discovery Sources -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Discovery Sources</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fab fa-github text-gray-600 mr-3"></i>
+                                <span class="text-sm font-medium">GitHub Trending</span>
+                            </div>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-rocket text-gray-600 mr-3"></i>
+                                <span class="text-sm font-medium">Product Hunt</span>
+                            </div>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-newspaper text-gray-600 mr-3"></i>
+                                <span class="text-sm font-medium">Tech News</span>
+                            </div>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fab fa-twitter text-gray-600 mr-3"></i>
+                                <span class="text-sm font-medium">Social Media</span>
+                            </div>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Manual</span>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors">
+                        Configure Sources
+                    </button>
+                </div>
+
+                <!-- Recent Discoveries -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Recent Discoveries</h4>
+                    <div class="space-y-4">
+                        <div class="discovery-card bg-blue-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-blue-900">Windsurf IDE</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">High Priority</span>
+                            </div>
+                            <p class="text-sm text-blue-700 mb-2">AI-first IDE with agent capabilities</p>
+                            <div class="flex items-center text-xs text-blue-600">
+                                <i class="fas fa-star mr-1"></i>
+                                <span class="mr-3">2.1k stars</span>
+                                <i class="fas fa-calendar mr-1"></i>
+                                <span>Jan 14, 2025</span>
+                            </div>
+                        </div>
+                        
+                        <div class="discovery-card bg-green-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-green-900">Aider v0.55</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Update</span>
+                            </div>
+                            <p class="text-sm text-green-700 mb-2">New context engineering features</p>
+                            <div class="flex items-center text-xs text-green-600">
+                                <i class="fas fa-code-branch mr-1"></i>
+                                <span class="mr-3">v0.55.0</span>
+                                <i class="fas fa-calendar mr-1"></i>
+                                <span>Jan 12, 2025</span>
+                            </div>
+                        </div>
+                        
+                        <div class="discovery-card bg-yellow-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-yellow-900">Claude Desktop</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Monitor</span>
+                            </div>
+                            <p class="text-sm text-yellow-700 mb-2">Computer use capabilities announced</p>
+                            <div class="flex items-center text-xs text-yellow-600">
+                                <i class="fas fa-desktop mr-1"></i>
+                                <span class="mr-3">Enterprise</span>
+                                <i class="fas fa-calendar mr-1"></i>
+                                <span>Jan 10, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evaluation Queue -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Evaluation Queue</h4>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-medium text-gray-900">Windsurf IDE</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Week 1</span>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-2">Initial screening phase</div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-medium text-gray-900">Replit Agent</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Week 2</span>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-2">Technical deep dive</div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-medium text-gray-900">Continue.dev</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Week 3</span>
+                            </div>
+                            <div class="text-sm text-gray-600 mb-2">Business case development</div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors">
+                        Manage Queue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Intelligence Dashboard -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">📊 Strategic Intelligence Dashboard</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Market Trends -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Market Trends Analysis</h4>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="trendsChart"></canvas>
+                    </div>
+                    <div class="mt-4 grid grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-green-600">↗ 340%</div>
+                            <div class="text-sm text-gray-600">AI IDE Growth</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-blue-600">↗ 180%</div>
+                            <div class="text-sm text-gray-600">Context Tools</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competitive Landscape -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Competitive Positioning</h4>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="competitiveChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <div class="text-lg font-bold text-purple-600">Top 15%</div>
+                        <div class="text-sm text-gray-600">Industry Position</div>
+                    </div>
+                </div>
+
+                <!-- ROI Projections -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">ROI Projections</h4>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="roiProjectionChart"></canvas>
+                    </div>
+                    <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-lg font-bold text-green-600">$2.4M</div>
+                            <div class="text-sm text-gray-600">Current ROI</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-blue-600">$4.1M</div>
+                            <div class="text-sm text-gray-600">Q4 Projection</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-purple-600">$7.2M</div>
+                            <div class="text-sm text-gray-600">2025 Target</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Monitoring -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Risk Monitoring</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
+                            <div>
+                                <div class="font-medium text-red-800">Vendor Concentration</div>
+                                <div class="text-sm text-red-600">87% GitHub Copilot dependency</div>
+                            </div>
+                            <div class="text-2xl text-red-600">⚠️</div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                            <div>
+                                <div class="font-medium text-yellow-800">Skills Gap</div>
+                                <div class="text-sm text-yellow-600">Context engineering adoption</div>
+                            </div>
+                            <div class="text-2xl text-yellow-600">⚡</div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg border-l-4 border-green-500">
+                            <div>
+                                <div class="font-medium text-green-800">Security Compliance</div>
+                                <div class="text-sm text-green-600">All systems compliant</div>
+                            </div>
+                            <div class="text-2xl text-green-600">✅</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Planning Tools -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">🎯 Strategic Planning Tools</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Resource Calculator -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Resource Calculator</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tool Expansion</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Cursor Enterprise (200 users)</option>
+                                <option>Windsurf Pro (100 users)</option>
+                                <option>Custom AI Platform</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Q1 2025</option>
+                                <option>Q2 2025</option>
+                                <option>Q3 2025</option>
+                            </select>
+                        </div>
+                        <div class="strategic-metric rounded-lg p-4">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-gray-900">$185K</div>
+                                <div class="text-sm text-gray-600">Estimated Investment</div>
+                            </div>
+                        </div>
+                        <div class="strategic-metric rounded-lg p-4">
+                            <div class="text-center">
+                                <div class="text-xl font-bold text-gray-900">240%</div>
+                                <div class="text-sm text-gray-600">Projected ROI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario Planner -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Scenario Planner</h4>
+                    <div class="space-y-4">
+                        <button class="w-full text-left p-3 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors">
+                            <div class="font-medium text-blue-900">Aggressive Expansion</div>
+                            <div class="text-sm text-blue-700">Deploy 5 new tools in Q1</div>
+                        </button>
+                        <button class="w-full text-left p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors">
+                            <div class="font-medium text-green-900">Steady Growth</div>
+                            <div class="text-sm text-green-700">Focus on training & adoption</div>
+                        </button>
+                        <button class="w-full text-left p-3 bg-yellow-50 rounded-lg border border-yellow-200 hover:bg-yellow-100 transition-colors">
+                            <div class="font-medium text-yellow-900">Conservative Approach</div>
+                            <div class="text-sm text-yellow-700">Optimize existing tools</div>
+                        </button>
+                        <div class="p-3 bg-gray-50 rounded-lg">
+                            <div class="text-sm text-gray-700">
+                                <strong>Recommended:</strong> Steady Growth
+                            </div>
+                            <div class="text-xs text-gray-500 mt-1">
+                                Balances risk and opportunity
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Support -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Decision Support</h4>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <div class="font-medium text-red-800">Urgent Decision</div>
+                            <div class="text-sm text-red-600">Cursor budget approval</div>
+                            <div class="text-xs text-red-500">Due: Feb 15, 2025</div>
+                        </div>
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <div class="font-medium text-yellow-800">Upcoming Decision</div>
+                            <div class="text-sm text-yellow-600">Training resource allocation</div>
+                            <div class="text-xs text-yellow-500">Due: Mar 1, 2025</div>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <div class="font-medium text-blue-800">Strategic Planning</div>
+                            <div class="text-sm text-blue-600">2025 roadmap review</div>
+                            <div class="text-xs text-blue-500">Due: Mar 15, 2025</div>
+                        </div>
+                        <button class="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors">
+                            Generate Recommendation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered Insights -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">🤖 AI-Powered Strategic Insights</h3>
+            
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-8 text-white mb-8">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-brain text-2xl mr-3"></i>
+                    <h4 class="text-xl font-semibold">Strategic Intelligence Analysis</h4>
+                </div>
+                <div id="aiInsights" class="space-y-4">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4">
+                        <div class="font-semibold mb-2">🎯 Key Opportunity Identified</div>
+                        <div class="text-sm">Context engineering adoption could increase productivity by an additional 25% based on early pilot data. Recommend accelerated training program.</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4">
+                        <div class="font-semibold mb-2">⚠️ Risk Alert</div>
+                        <div class="text-sm">Microsoft's rapid VS Code AI integration may impact standalone tool adoption. Monitor competitive moves closely.</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4">
+                        <div class="font-semibold mb-2">📈 Market Trend</div>
+                        <div class="text-sm">Agent-based development tools showing 340% growth. AWS Strands Agents represents strategic positioning opportunity.</div>
+                    </div>
+                </div>
+                <button id="generateNewInsights" class="mt-6 bg-white text-purple-600 px-6 py-2 rounded-md hover:bg-gray-100 transition-colors">
+                    Generate New Insights
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">AI Strategy Hub - Strategic Command Center | Intelligence-driven decision making</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/strategy-center.js"></script>
+</body>
+</html>

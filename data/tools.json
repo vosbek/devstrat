@@ -1,0 +1,254 @@
+{
+  "tools": [
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "category": "IDE_INTEGRATION",
+      "vendor": "Microsoft",
+      "status": "DEPLOYED",
+      "evaluation_score": 7.8,
+      "cost_per_user_monthly": 39,
+      "users_count": 1087,
+      "adoption_rate": 87,
+      "satisfaction_score": 4.2,
+      "use_cases": ["code_completion", "simple_functions", "documentation"],
+      "strengths": [
+        "Excellent code completion",
+        "Wide language support",
+        "Strong Microsoft ecosystem integration",
+        "Large trained model"
+      ],
+      "weaknesses": [
+        "Limited context window",
+        "Struggles with complex multi-file tasks",
+        "Generic suggestions for enterprise patterns"
+      ],
+      "pilot_feedback": "Strong for daily coding tasks, but limited for complex architectural work",
+      "recommendation": "MAINTAIN",
+      "last_updated": "2025-01-15",
+      "roi_calculation": {
+        "monthly_cost": 42393,
+        "monthly_savings": 187000,
+        "productivity_gain_percent": 28,
+        "roi_percent": 340
+      },
+      "security_assessment": {
+        "data_retention": "No code stored",
+        "compliance_level": "ENTERPRISE",
+        "audit_status": "PASSED"
+      }
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "AI_FIRST_IDE",
+      "vendor": "Anysphere",
+      "status": "PILOT_COMPLETE",
+      "evaluation_score": 8.5,
+      "cost_per_user_monthly": 20,
+      "users_count": 25,
+      "adoption_rate": 96,
+      "satisfaction_score": 4.6,
+      "use_cases": ["complex_refactoring", "multi_file_editing", "architecture_changes"],
+      "strengths": [
+        "Excellent multi-file context understanding",
+        "Agent mode for autonomous tasks",
+        "Superior for complex refactoring",
+        "Great developer experience"
+      ],
+      "weaknesses": [
+        "No enterprise on-premises option",
+        "Smaller ecosystem than VS Code",
+        "Higher learning curve for basic tasks"
+      ],
+      "pilot_feedback": "Exceptional for complex tasks, 35% productivity improvement on architectural work",
+      "recommendation": "EXPAND_PILOT",
+      "last_updated": "2025-01-15",
+      "roi_calculation": {
+        "monthly_cost": 500,
+        "monthly_savings": 8750,
+        "productivity_gain_percent": 35,
+        "roi_percent": 1650
+      },
+      "security_assessment": {
+        "data_retention": "Configurable",
+        "compliance_level": "STANDARD",
+        "audit_status": "IN_PROGRESS"
+      }
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "category": "AI_ASSISTANT",
+      "vendor": "Anthropic",
+      "status": "EVALUATION",
+      "evaluation_score": 7.9,
+      "cost_per_user_monthly": 0,
+      "users_count": 12,
+      "adoption_rate": 75,
+      "satisfaction_score": 4.4,
+      "use_cases": ["code_analysis", "documentation", "legacy_understanding"],
+      "strengths": [
+        "Excellent for code analysis",
+        "Superior documentation generation",
+        "Great for understanding complex codebases",
+        "Strong reasoning capabilities"
+      ],
+      "weaknesses": [
+        "Not integrated into IDE",
+        "Usage-based pricing can be unpredictable",
+        "No direct code execution"
+      ],
+      "pilot_feedback": "Excellent for analysis and documentation, but workflow integration challenging",
+      "recommendation": "CONTINUE_EVALUATION",
+      "last_updated": "2025-01-12",
+      "roi_calculation": {
+        "monthly_cost": 240,
+        "monthly_savings": 4200,
+        "productivity_gain_percent": 22,
+        "roi_percent": 1650
+      },
+      "security_assessment": {
+        "data_retention": "No training on data",
+        "compliance_level": "ENTERPRISE",
+        "audit_status": "PASSED"
+      }
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf IDE",
+      "category": "AI_FIRST_IDE",
+      "vendor": "Codeium",
+      "status": "DISCOVERY",
+      "evaluation_score": null,
+      "cost_per_user_monthly": 15,
+      "users_count": 0,
+      "adoption_rate": 0,
+      "satisfaction_score": null,
+      "use_cases": ["agentic_development", "on_premises_ai", "enterprise_deployment"],
+      "strengths": [
+        "On-premises deployment option",
+        "Agentic development approach",
+        "Strong enterprise features",
+        "Cost effective"
+      ],
+      "weaknesses": [
+        "Newer platform",
+        "Limited community",
+        "Unknown enterprise support quality"
+      ],
+      "pilot_feedback": "Initial discovery phase - scheduling evaluation",
+      "recommendation": "EVALUATE",
+      "last_updated": "2025-01-14",
+      "roi_calculation": null,
+      "security_assessment": {
+        "data_retention": "On-premises available",
+        "compliance_level": "ENTERPRISE",
+        "audit_status": "PENDING"
+      }
+    },
+    {
+      "id": "aws-strands",
+      "name": "AWS Strands Agents",
+      "category": "AGENT_FRAMEWORK",
+      "vendor": "Amazon",
+      "status": "DISCOVERY",
+      "evaluation_score": null,
+      "cost_per_user_monthly": null,
+      "users_count": 0,
+      "adoption_rate": 0,
+      "satisfaction_score": null,
+      "use_cases": ["ai_agents", "custom_automation", "enterprise_integration"],
+      "strengths": [
+        "Enterprise-grade AWS integration",
+        "Production-ready agent framework",
+        "Open source with enterprise support",
+        "Multi-model support"
+      ],
+      "weaknesses": [
+        "Complex setup",
+        "Requires AWS expertise",
+        "New platform - limited track record"
+      ],
+      "pilot_feedback": "Promising for custom AI agent development, aligns with AWS strategy",
+      "recommendation": "EVALUATE",
+      "last_updated": "2025-01-10",
+      "roi_calculation": null,
+      "security_assessment": {
+        "data_retention": "AWS controlled",
+        "compliance_level": "ENTERPRISE",
+        "audit_status": "AWS_COMPLIANT"
+      }
+    },
+    {
+      "id": "tabnine",
+      "name": "Tabnine",
+      "category": "IDE_INTEGRATION",
+      "vendor": "Tabnine",
+      "status": "EVALUATED",
+      "evaluation_score": 6.8,
+      "cost_per_user_monthly": 12,
+      "users_count": 0,
+      "adoption_rate": 0,
+      "satisfaction_score": 3.8,
+      "use_cases": ["code_completion", "privacy_focused", "local_models"],
+      "strengths": [
+        "Strong privacy features",
+        "Local model options",
+        "Good IDE integration",
+        "Competitive pricing"
+      ],
+      "weaknesses": [
+        "Lower accuracy than Copilot",
+        "Limited advanced features",
+        "Smaller community"
+      ],
+      "pilot_feedback": "Good privacy features but lower productivity gains than Copilot",
+      "recommendation": "NOT_RECOMMENDED",
+      "last_updated": "2024-12-20",
+      "roi_calculation": {
+        "monthly_cost": 12,
+        "monthly_savings": 8.5,
+        "productivity_gain_percent": 15,
+        "roi_percent": -29
+      },
+      "security_assessment": {
+        "data_retention": "Local only option",
+        "compliance_level": "HIGH",
+        "audit_status": "PASSED"
+      }
+    }
+  ],
+  "categories": {
+    "IDE_INTEGRATION": "Tools that integrate directly into existing IDEs",
+    "AI_FIRST_IDE": "Purpose-built AI-centric development environments",
+    "AI_ASSISTANT": "Standalone AI assistants for development tasks",
+    "AGENT_FRAMEWORK": "Platforms for building AI agents",
+    "SPECIALIZED": "Domain-specific AI development tools"
+  },
+  "statuses": {
+    "DEPLOYED": "Actively used in production",
+    "PILOT_COMPLETE": "Pilot testing completed",
+    "PILOT_ACTIVE": "Currently in pilot testing",
+    "EVALUATION": "Under formal evaluation",
+    "DISCOVERY": "Initial research and discovery",
+    "EVALUATED": "Evaluation completed",
+    "DEPRECATED": "No longer recommended"
+  },
+  "recommendations": {
+    "EXPAND_PILOT": "Recommended for expanded pilot testing",
+    "DEPLOY": "Recommended for full deployment",
+    "MAINTAIN": "Continue current usage",
+    "EVALUATE": "Recommend formal evaluation",
+    "CONTINUE_EVALUATION": "Continue current evaluation process",
+    "NOT_RECOMMENDED": "Not recommended for adoption",
+    "MONITOR": "Monitor for future consideration"
+  },
+  "metadata": {
+    "last_updated": "2025-01-15",
+    "update_frequency": "Weekly",
+    "next_review": "2025-01-22",
+    "data_source": "AI Strategy Team",
+    "version": "1.2"
+  }
+}

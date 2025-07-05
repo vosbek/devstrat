@@ -1,0 +1,424 @@
+{
+  "curricula": [
+    {
+      "id": "prompt-engineering-basics",
+      "level": "beginner",
+      "name": "Prompt Engineering Fundamentals",
+      "description": "Master the core concepts of effective prompt engineering for AI development tools",
+      "duration_hours": 8,
+      "modules": [
+        {
+          "id": "pe-intro",
+          "name": "Introduction to AI Models",
+          "duration_hours": 2,
+          "topics": [
+            "Understanding LLMs and their capabilities",
+            "Model limitations and hallucinations",
+            "Context windows and token limits",
+            "Different model types (GPT, Claude, etc.)"
+          ],
+          "completion_rate": 92,
+          "satisfaction": 4.3
+        },
+        {
+          "id": "pe-structure",
+          "name": "Prompt Structure and Patterns",
+          "duration_hours": 3,
+          "topics": [
+            "Basic prompt anatomy",
+            "Role, context, and instruction formatting",
+            "Few-shot vs zero-shot prompting",
+            "Common prompt patterns"
+          ],
+          "completion_rate": 88,
+          "satisfaction": 4.5
+        },
+        {
+          "id": "pe-tools",
+          "name": "Tool-Specific Prompting",
+          "duration_hours": 2,
+          "topics": [
+            "GitHub Copilot optimization",
+            "Claude Code best practices",
+            "Cursor prompt techniques",
+            "IDE-specific considerations"
+          ],
+          "completion_rate": 85,
+          "satisfaction": 4.2
+        },
+        {
+          "id": "pe-ethics",
+          "name": "Ethics and Security",
+          "duration_hours": 1,
+          "topics": [
+            "AI ethics in development",
+            "Security considerations",
+            "Data privacy and prompts",
+            "Enterprise compliance"
+          ],
+          "completion_rate": 94,
+          "satisfaction": 4.1
+        }
+      ],
+      "prerequisites": [],
+      "completion_rate": 73,
+      "satisfaction": 4.2,
+      "enrolled": 1087,
+      "completed": 794,
+      "certification": "Prompt Engineering Associate",
+      "last_updated": "2025-01-10"
+    },
+    {
+      "id": "context-engineering",
+      "level": "intermediate",
+      "name": "Context Engineering Mastery",
+      "description": "Advanced techniques for building context-aware AI systems and workflows",
+      "duration_hours": 16,
+      "modules": [
+        {
+          "id": "ce-fundamentals",
+          "name": "Context Engineering Principles",
+          "duration_hours": 4,
+          "topics": [
+            "Static vs dynamic context",
+            "Context hierarchy and priorities",
+            "Information architecture for AI",
+            "Context engineering vs prompt engineering"
+          ],
+          "completion_rate": 68,
+          "satisfaction": 4.4
+        },
+        {
+          "id": "ce-systems",
+          "name": "Building Context Systems",
+          "duration_hours": 5,
+          "topics": [
+            "RAG (Retrieval Augmented Generation)",
+            "Vector databases and embeddings",
+            "Context caching strategies",
+            "Multi-turn conversation design"
+          ],
+          "completion_rate": 62,
+          "satisfaction": 4.6
+        },
+        {
+          "id": "ce-enterprise",
+          "name": "Enterprise Context Engineering",
+          "duration_hours": 4,
+          "topics": [
+            "Codebase-aware context systems",
+            "Documentation integration",
+            "Team knowledge management",
+            "Context security and compliance"
+          ],
+          "completion_rate": 58,
+          "satisfaction": 4.3
+        },
+        {
+          "id": "ce-advanced",
+          "name": "Advanced Context Techniques",
+          "duration_hours": 3,
+          "topics": [
+            "Multi-agent context orchestration",
+            "Temporal context management",
+            "Context evaluation and optimization",
+            "Future-proofing context systems"
+          ],
+          "completion_rate": 45,
+          "satisfaction": 4.7
+        }
+      ],
+      "prerequisites": ["prompt-engineering-basics"],
+      "completion_rate": 34,
+      "satisfaction": 4.5,
+      "enrolled": 423,
+      "completed": 144,
+      "certification": "Context Engineering Professional",
+      "last_updated": "2025-01-12"
+    },
+    {
+      "id": "ai-security",
+      "level": "intermediate",
+      "name": "AI Security Best Practices",
+      "description": "Learn to use AI tools securely in enterprise environments",
+      "duration_hours": 6,
+      "modules": [
+        {
+          "id": "ais-threats",
+          "name": "AI Security Threat Landscape",
+          "duration_hours": 2,
+          "topics": [
+            "Prompt injection attacks",
+            "Data leakage risks",
+            "Model manipulation",
+            "Enterprise threat vectors"
+          ],
+          "completion_rate": 0,
+          "satisfaction": null
+        },
+        {
+          "id": "ais-practices",
+          "name": "Secure AI Development Practices",
+          "duration_hours": 2,
+          "topics": [
+            "Secure prompt design",
+            "Code review for AI-generated content",
+            "Data sanitization",
+            "Access control and permissions"
+          ],
+          "completion_rate": 0,
+          "satisfaction": null
+        },
+        {
+          "id": "ais-compliance",
+          "name": "Compliance and Governance",
+          "duration_hours": 2,
+          "topics": [
+            "Regulatory requirements",
+            "Audit trails and logging",
+            "Incident response",
+            "Policy development"
+          ],
+          "completion_rate": 0,
+          "satisfaction": null
+        }
+      ],
+      "prerequisites": ["prompt-engineering-basics"],
+      "completion_rate": 0,
+      "satisfaction": null,
+      "enrolled": 0,
+      "completed": 0,
+      "certification": "AI Security Specialist",
+      "last_updated": "2025-01-15"
+    },
+    {
+      "id": "advanced-ai-development",
+      "level": "advanced",
+      "name": "Advanced AI Development Workflows",
+      "description": "Master complex AI-powered development workflows and agent systems",
+      "duration_hours": 24,
+      "modules": [
+        {
+          "id": "aad-agents",
+          "name": "AI Agent Development",
+          "duration_hours": 8,
+          "topics": [
+            "Agent architecture patterns",
+            "Multi-agent systems",
+            "Agent communication protocols",
+            "Production agent deployment"
+          ],
+          "completion_rate": 0,
+          "satisfaction": null
+        },
+        {
+          "id": "aad-workflows",
+          "name": "AI-Powered CI/CD",
+          "duration_hours": 6,
+          "topics": [
+            "Automated code review",
+            "AI-generated testing",
+            "Deployment automation",
+            "Performance monitoring"
+          ],
+          "completion_rate": 0,
+          "satisfaction": null
+        },
+        {
+          "id": "aad-custom",
+          "name": "Custom AI Tool Development",
+          "duration_hours": 6,
+          "topics": [
+            "Building internal AI tools",
+            "API integration patterns",
+            "Tool evaluation frameworks",
+            "Scaling custom solutions"
+          ],
+          "completion_rate": 0,
+          "satisfaction": null
+        },
+        {
+          "id": "aad-leadership",
+          "name": "AI Strategy Leadership",
+          "duration_hours": 4,
+          "topics": [
+            "Building AI-first teams",
+            "Technology evaluation",
+            "Change management",
+            "ROI measurement"
+          ],
+          "completion_rate": 0,
+          "satisfaction": null
+        }
+      ],
+      "prerequisites": ["context-engineering", "ai-security"],
+      "completion_rate": 0,
+      "satisfaction": null,
+      "enrolled": 0,
+      "completed": 0,
+      "certification": "AI Development Expert",
+      "last_updated": "2025-01-15"
+    }
+  ],
+  "skill_assessments": [
+    {
+      "id": "prompt-engineering-assessment",
+      "name": "Prompt Engineering Skills Assessment",
+      "duration_minutes": 30,
+      "questions": 25,
+      "skill_areas": [
+        {
+          "area": "Basic Prompting",
+          "weight": 30,
+          "questions": 8
+        },
+        {
+          "area": "Advanced Techniques",
+          "weight": 40,
+          "questions": 10
+        },
+        {
+          "area": "Tool-Specific Knowledge",
+          "weight": 20,
+          "questions": 5
+        },
+        {
+          "area": "Security & Ethics",
+          "weight": 10,
+          "questions": 2
+        }
+      ],
+      "pass_threshold": 70,
+      "attempts_allowed": 3,
+      "validity_months": 6
+    },
+    {
+      "id": "context-engineering-assessment",
+      "name": "Context Engineering Skills Assessment",
+      "duration_minutes": 45,
+      "questions": 30,
+      "skill_areas": [
+        {
+          "area": "Context Principles",
+          "weight": 25,
+          "questions": 8
+        },
+        {
+          "area": "System Design",
+          "weight": 35,
+          "questions": 10
+        },
+        {
+          "area": "Implementation",
+          "weight": 30,
+          "questions": 9
+        },
+        {
+          "area": "Optimization",
+          "weight": 10,
+          "questions": 3
+        }
+      ],
+      "pass_threshold": 75,
+      "attempts_allowed": 2,
+      "validity_months": 12
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "developer-ai-basics",
+      "name": "Developer AI Fundamentals",
+      "target_audience": "All Developers",
+      "duration_weeks": 4,
+      "courses": ["prompt-engineering-basics"],
+      "description": "Essential AI skills for every developer at Nationwide"
+    },
+    {
+      "id": "advanced-ai-practitioner",
+      "name": "Advanced AI Practitioner",
+      "target_audience": "Senior Developers, Tech Leads",
+      "duration_weeks": 12,
+      "courses": ["prompt-engineering-basics", "context-engineering", "ai-security"],
+      "description": "Comprehensive AI development expertise"
+    },
+    {
+      "id": "ai-strategy-leader",
+      "name": "AI Strategy Leadership",
+      "target_audience": "Engineering Managers, Architects",
+      "duration_weeks": 16,
+      "courses": ["prompt-engineering-basics", "context-engineering", "ai-security", "advanced-ai-development"],
+      "description": "Strategic AI leadership and advanced implementation"
+    }
+  ],
+  "community_contributions": [
+    {
+      "id": "prompt-patterns",
+      "name": "Community Prompt Patterns",
+      "type": "pattern_library",
+      "contributions": 47,
+      "downloads": 1203,
+      "top_patterns": [
+        {
+          "name": "API Documentation Generator",
+          "author": "mike.smith@nationwide.com",
+          "downloads": 234,
+          "rating": 4.7
+        },
+        {
+          "name": "Test Case Generator",
+          "author": "sarah.jones@nationwide.com",
+          "downloads": 189,
+          "rating": 4.5
+        },
+        {
+          "name": "Code Review Assistant",
+          "author": "david.wilson@nationwide.com",
+          "downloads": 156,
+          "rating": 4.3
+        }
+      ]
+    },
+    {
+      "id": "tool-reviews",
+      "name": "Tool Reviews & Comparisons",
+      "type": "reviews",
+      "contributions": 23,
+      "views": 5670,
+      "top_reviews": [
+        {
+          "title": "Cursor vs GitHub Copilot for Complex Refactoring",
+          "author": "anna.johnson@nationwide.com",
+          "views": 1234,
+          "rating": 4.8
+        },
+        {
+          "title": "Claude Code for Legacy System Analysis",
+          "author": "robert.brown@nationwide.com",
+          "views": 987,
+          "rating": 4.6
+        }
+      ]
+    }
+  ],
+  "monthly_metrics": {
+    "january_2025": {
+      "total_enrollments": 1510,
+      "completion_rate": 62,
+      "satisfaction_average": 4.3,
+      "new_certifications": 94,
+      "community_contributions": 12,
+      "top_requested_topics": [
+        "Context engineering for microservices",
+        "AI security in financial services",
+        "Custom agent development"
+      ]
+    }
+  },
+  "metadata": {
+    "last_updated": "2025-01-15",
+    "update_frequency": "Weekly",
+    "next_review": "2025-01-22",
+    "data_source": "Learning Management System",
+    "version": "1.3"
+  }
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Hub - AI Strategy Hub</title>
+    <meta name="description" content="AI training, tools, and resources for developers at Nationwide Insurance">
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .tool-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+        .learning-path {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .achievement-badge {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Hub
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-gray-900">👨‍💻 Developer Hub</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm text-gray-600">
+                        Welcome, <span id="userName" class="font-semibold">Developer</span>
+                    </div>
+                    <button id="profileBtn" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-user-circle text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="learning-path text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4">Master AI-Powered Development</h2>
+                <p class="text-xl opacity-90">Your personalized journey to AI development mastery</p>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold" id="userLevel">Intermediate</div>
+                    <div class="text-sm opacity-75">Current Level</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold" id="completedCourses">7/12</div>
+                    <div class="text-sm opacity-75">Courses Complete</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold" id="skillPoints">850</div>
+                    <div class="text-sm opacity-75">Skill Points</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold" id="communityRank">#23</div>
+                    <div class="text-sm opacity-75">Community Rank</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skill Assessment -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">🎯 Your AI Skills Assessment</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Skills Overview -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-6 text-gray-900">Skills Progress</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-700">Prompt Engineering</span>
+                            <span class="text-sm text-gray-500">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-700">Context Engineering</span>
+                            <span class="text-sm text-gray-500">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-600 h-2 rounded-full" style="width: 60%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-700">Tool Mastery</span>
+                            <span class="text-sm text-gray-500">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-600 h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-700">AI Security</span>
+                            <span class="text-sm text-gray-500">45%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-red-600 h-2 rounded-full" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <button id="takeAssessment" class="mt-6 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                        Retake Assessment
+                    </button>
+                </div>
+
+                <!-- Achievements -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-lg font-semibold mb-6 text-gray-900">🏆 Recent Achievements</h4>
+                    <div class="space-y-4">
+                        <div class="achievement-badge rounded-lg p-4 flex items-center">
+                            <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-star text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Prompt Master</div>
+                                <div class="text-sm text-gray-600">Completed advanced prompt engineering</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-100 rounded-lg p-4 flex items-center">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-code text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Tool Explorer</div>
+                                <div class="text-sm text-gray-600">Tested 5 different AI coding tools</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-100 rounded-lg p-4 flex items-center">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Community Contributor</div>
+                                <div class="text-sm text-gray-600">Shared 3 prompt patterns</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Learning Path -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">📚 Your Learning Path</h3>
+            
+            <div class="mb-6">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium text-gray-700">Overall Progress</span>
+                    <span class="text-sm text-gray-500">7 of 12 completed</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 58%"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Completed Course -->
+                <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-semibold text-green-800">Prompt Engineering Basics</h4>
+                        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-green-700 mb-4">Master the fundamentals of effective prompt engineering</p>
+                    <div class="text-sm text-green-600">
+                        <div>✅ Completed: January 10, 2025</div>
+                        <div>⭐ Score: 92%</div>
+                    </div>
+                </div>
+
+                <!-- Current Course -->
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-semibold text-blue-800">Context Engineering</h4>
+                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-play text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-blue-700 mb-4">Advanced techniques for building context-aware AI systems</p>
+                    <div class="text-sm text-blue-600 mb-4">
+                        <div>📚 Module 2 of 5</div>
+                        <div>⏱️ Est. completion: Feb 1, 2025</div>
+                    </div>
+                    <div class="w-full bg-blue-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 40%"></div>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                        Continue Learning
+                    </button>
+                </div>
+
+                <!-- Next Course -->
+                <div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-semibold text-gray-800">AI Security Best Practices</h4>
+                        <div class="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-lock text-white text-sm"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 mb-4">Learn to use AI tools securely in enterprise environments</p>
+                    <div class="text-sm text-gray-600">
+                        <div>🔒 Unlocks after Context Engineering</div>
+                        <div>⏱️ Duration: 3 hours</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Recommendations -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">🛠️ Recommended Tools for You</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- GitHub Copilot -->
+                <div class="tool-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-semibold text-gray-900">GitHub Copilot</h4>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Available</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">AI pair programmer that helps you write code faster</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Your Proficiency:</span>
+                            <span class="text-gray-900 font-medium">Advanced</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Usage:</span>
+                            <span class="text-gray-900 font-medium">Daily</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Satisfaction:</span>
+                            <span class="text-gray-900 font-medium">4.2/5</span>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-gray-100 text-gray-700 py-2 rounded-md hover:bg-gray-200 transition-colors">
+                        View Tips & Tricks
+                    </button>
+                </div>
+
+                <!-- Cursor -->
+                <div class="tool-card bg-white rounded-lg shadow-lg p-6 border-blue-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-semibold text-gray-900">Cursor</h4>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Recommended</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">AI-first code editor for complex tasks and refactoring</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Match Score:</span>
+                            <span class="text-gray-900 font-medium">95%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Best For:</span>
+                            <span class="text-gray-900 font-medium">Complex Tasks</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Cost:</span>
+                            <span class="text-gray-900 font-medium">$20/month</span>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                        Request Access
+                    </button>
+                </div>
+
+                <!-- Claude Code -->
+                <div class="tool-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-semibold text-gray-900">Claude Code</h4>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">Explore</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Advanced AI assistant for code analysis and documentation</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Match Score:</span>
+                            <span class="text-gray-900 font-medium">78%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Best For:</span>
+                            <span class="text-gray-900 font-medium">Analysis</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Status:</span>
+                            <span class="text-gray-900 font-medium">Beta</span>
+                        </div>
+                    </div>
+                    <button class="mt-4 w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Contributions -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">👥 Community & Knowledge Sharing</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Recent Contributions -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Your Recent Contributions</h4>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-green-500">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-gray-900">Prompt Pattern: API Documentation</span>
+                                <span class="text-sm text-gray-500">Jan 12</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Shared a prompt pattern for generating API documentation</p>
+                            <div class="flex items-center mt-2 text-sm text-gray-500">
+                                <i class="fas fa-thumbs-up mr-1"></i>
+                                <span class="mr-4">15 likes</span>
+                                <i class="fas fa-download mr-1"></i>
+                                <span>23 downloads</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 border-l-4 border-blue-500">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-gray-900">Tool Review: Cursor vs Copilot</span>
+                                <span class="text-sm text-gray-500">Jan 8</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Detailed comparison for complex refactoring tasks</p>
+                            <div class="flex items-center mt-2 text-sm text-gray-500">
+                                <i class="fas fa-thumbs-up mr-1"></i>
+                                <span class="mr-4">8 likes</span>
+                                <i class="fas fa-comment mr-1"></i>
+                                <span>12 comments</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-6 w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors">
+                        Share Knowledge
+                    </button>
+                </div>
+
+                <!-- Community Feed -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold mb-4 text-gray-900">Community Highlights</h4>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-sm font-semibold">MS</span>
+                                </div>
+                                <div>
+                                    <span class="font-medium text-gray-900">Mike Smith</span>
+                                    <span class="text-sm text-gray-500 ml-2">2 hours ago</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 mb-2">Just published a new context engineering pattern for microservices architecture!</p>
+                            <div class="text-xs text-gray-500">#context-engineering #microservices</div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white text-sm font-semibold">AJ</span>
+                                </div>
+                                <div>
+                                    <span class="font-medium text-gray-900">Anna Johnson</span>
+                                    <span class="text-sm text-gray-500 ml-2">5 hours ago</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 mb-2">Great session on AI security best practices. Key takeaway: always validate AI-generated code!</p>
+                            <div class="text-xs text-gray-500">#ai-security #best-practices</div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-6 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                        Join Discussion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">⚡ Quick Actions</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <button class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clipboard-check text-blue-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Take Assessment</h4>
+                    <p class="text-sm text-gray-600">Update your skill profile</p>
+                </button>
+                
+                <button class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-green-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Request Tool</h4>
+                    <p class="text-sm text-gray-600">Access new AI tools</p>
+                </button>
+                
+                <button class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-share-alt text-purple-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Share Pattern</h4>
+                    <p class="text-sm text-gray-600">Contribute to community</p>
+                </button>
+                
+                <button class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-question-circle text-yellow-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Get Help</h4>
+                    <p class="text-sm text-gray-600">Technical support</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">AI Strategy Hub - Developer Portal | Your AI development journey starts here</p>
+        </div>
+    </footer>
+
+    <!-- Modals and JavaScript -->
+    <script src="../js/developer-hub.js"></script>
+</body>
+</html>

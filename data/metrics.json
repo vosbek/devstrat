@@ -1,0 +1,324 @@
+{
+  "overview": {
+    "total_developers": 1247,
+    "ai_tool_users": 1087,
+    "adoption_rate": 87.2,
+    "monthly_roi": 2400000,
+    "tools_tracked": 23,
+    "active_evaluations": 3,
+    "satisfaction_score": 4.2,
+    "last_updated": "2025-01-15T10:30:00Z"
+  },
+  "adoption_metrics": {
+    "by_tool": [
+      {
+        "tool_name": "GitHub Copilot",
+        "users": 1087,
+        "adoption_rate": 87.2,
+        "daily_active_users": 934,
+        "monthly_growth": 12.3
+      },
+      {
+        "tool_name": "Cursor",
+        "users": 25,
+        "adoption_rate": 2.0,
+        "daily_active_users": 24,
+        "monthly_growth": 150.0
+      },
+      {
+        "tool_name": "Claude Code",
+        "users": 12,
+        "adoption_rate": 1.0,
+        "daily_active_users": 8,
+        "monthly_growth": 33.3
+      }
+    ],
+    "by_team": [
+      {
+        "team": "Core Platform",
+        "total_developers": 156,
+        "ai_users": 142,
+        "adoption_rate": 91.0,
+        "satisfaction": 4.3
+      },
+      {
+        "team": "Mobile Development",
+        "total_developers": 89,
+        "ai_users": 78,
+        "adoption_rate": 87.6,
+        "satisfaction": 4.1
+      },
+      {
+        "team": "Data Engineering",
+        "total_developers": 134,
+        "ai_users": 119,
+        "adoption_rate": 88.8,
+        "satisfaction": 4.4
+      },
+      {
+        "team": "Security",
+        "total_developers": 67,
+        "ai_users": 45,
+        "adoption_rate": 67.2,
+        "satisfaction": 3.9
+      },
+      {
+        "team": "Frontend",
+        "total_developers": 203,
+        "ai_users": 189,
+        "adoption_rate": 93.1,
+        "satisfaction": 4.5
+      },
+      {
+        "team": "Backend Services",
+        "total_developers": 298,
+        "ai_users": 267,
+        "adoption_rate": 89.6,
+        "satisfaction": 4.2
+      },
+      {
+        "team": "DevOps",
+        "total_developers": 78,
+        "ai_users": 62,
+        "adoption_rate": 79.5,
+        "satisfaction": 4.0
+      },
+      {
+        "team": "QA/Testing",
+        "total_developers": 122,
+        "ai_users": 95,
+        "adoption_rate": 77.9,
+        "satisfaction": 3.8
+      },
+      {
+        "team": "Architecture",
+        "total_developers": 34,
+        "ai_users": 32,
+        "adoption_rate": 94.1,
+        "satisfaction": 4.6
+      },
+      {
+        "team": "Infrastructure",
+        "total_developers": 66,
+        "ai_users": 58,
+        "adoption_rate": 87.9,
+        "satisfaction": 4.1
+      }
+    ]
+  },
+  "productivity_metrics": {
+    "code_completion": {
+      "acceptance_rate": 73.4,
+      "time_saved_minutes_daily": 47,
+      "lines_suggested": 12450,
+      "lines_accepted": 9142
+    },
+    "development_velocity": {
+      "stories_per_sprint_increase": 18.7,
+      "bug_fix_time_reduction": 23.5,
+      "code_review_time_reduction": 31.2,
+      "documentation_speed_increase": 45.8
+    },
+    "quality_metrics": {
+      "bug_density_change": -15.3,
+      "code_complexity_reduction": 8.7,
+      "test_coverage_improvement": 12.4,
+      "security_vulnerability_reduction": 22.1
+    }
+  },
+  "roi_analysis": {
+    "monthly_costs": {
+      "github_copilot": 42393,
+      "cursor": 500,
+      "claude_code": 240,
+      "training_programs": 25000,
+      "infrastructure": 8000,
+      "support": 15000,
+      "total": 91133
+    },
+    "monthly_benefits": {
+      "developer_time_savings": 1850000,
+      "reduced_bug_fixing": 320000,
+      "faster_feature_delivery": 180000,
+      "improved_code_quality": 140000,
+      "reduced_onboarding_time": 45000,
+      "total": 2535000
+    },
+    "roi_percentage": 2683,
+    "payback_period_months": 0.4,
+    "annual_savings": 30420000
+  },
+  "training_metrics": {
+    "completion_rates": {
+      "prompt_engineering_basics": 73.0,
+      "context_engineering": 34.1,
+      "ai_security": 0.0,
+      "advanced_development": 0.0
+    },
+    "certification_counts": {
+      "prompt_engineering_associate": 794,
+      "context_engineering_professional": 144,
+      "ai_security_specialist": 0,
+      "ai_development_expert": 0
+    },
+    "skill_distribution": {
+      "beginner": 623,
+      "intermediate": 387,
+      "advanced": 97
+    }
+  },
+  "satisfaction_survey": {
+    "overall_satisfaction": 4.2,
+    "tool_helpfulness": 4.3,
+    "training_quality": 4.1,
+    "support_quality": 3.9,
+    "likelihood_to_recommend": 4.4,
+    "response_count": 847,
+    "response_rate": 77.9,
+    "last_survey_date": "2025-01-10"
+  },
+  "usage_patterns": {
+    "peak_hours": [9, 10, 11, 14, 15, 16],
+    "most_used_features": [
+      "Code completion",
+      "Function generation",
+      "Documentation assistance",
+      "Bug fixing suggestions",
+      "Test generation"
+    ],
+    "common_use_cases": [
+      {
+        "use_case": "Writing boilerplate code",
+        "frequency": 89.3,
+        "satisfaction": 4.5
+      },
+      {
+        "use_case": "API documentation",
+        "frequency": 76.2,
+        "satisfaction": 4.3
+      },
+      {
+        "use_case": "Test case generation",
+        "frequency": 68.7,
+        "satisfaction": 4.1
+      },
+      {
+        "use_case": "Code explanation",
+        "frequency": 61.4,
+        "satisfaction": 4.4
+      },
+      {
+        "use_case": "Refactoring assistance",
+        "frequency": 45.9,
+        "satisfaction": 4.0
+      }
+    ]
+  },
+  "competitive_benchmarks": {
+    "industry_adoption_rate": 62.5,
+    "nationwide_vs_industry": 24.7,
+    "peer_companies": [
+      {
+        "company": "Progressive",
+        "adoption_rate": 58.0,
+        "tools_count": 3
+      },
+      {
+        "company": "State Farm",
+        "adoption_rate": 71.0,
+        "tools_count": 4
+      },
+      {
+        "company": "Allstate",
+        "adoption_rate": 52.0,
+        "tools_count": 2
+      },
+      {
+        "company": "GEICO",
+        "adoption_rate": 69.0,
+        "tools_count": 3
+      }
+    ],
+    "nationwide_ranking": 2,
+    "percentile": 85
+  },
+  "monthly_trends": {
+    "2024_09": {
+      "adoption_rate": 45.2,
+      "satisfaction": 3.8,
+      "roi": 1250000
+    },
+    "2024_10": {
+      "adoption_rate": 52.7,
+      "satisfaction": 3.9,
+      "roi": 1580000
+    },
+    "2024_11": {
+      "adoption_rate": 61.3,
+      "satisfaction": 4.0,
+      "roi": 1890000
+    },
+    "2024_12": {
+      "adoption_rate": 74.8,
+      "satisfaction": 4.1,
+      "roi": 2150000
+    },
+    "2025_01": {
+      "adoption_rate": 87.2,
+      "satisfaction": 4.2,
+      "roi": 2400000
+    }
+  },
+  "strategic_alerts": [
+    {
+      "id": "vendor_concentration",
+      "type": "RISK",
+      "severity": "HIGH",
+      "title": "High Vendor Concentration Risk",
+      "description": "87% dependency on GitHub Copilot creates vendor lock-in risk",
+      "recommendation": "Diversify with Cursor and AWS Strands evaluation",
+      "deadline": "2025-03-15",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "skills_gap",
+      "type": "OPPORTUNITY",
+      "severity": "MEDIUM",
+      "title": "Context Engineering Skills Gap",
+      "description": "Only 34% completion rate on advanced context engineering",
+      "recommendation": "Accelerate training program and add incentives",
+      "deadline": "2025-02-28",
+      "status": "ACTIVE"
+    }
+  ],
+  "discovery_pipeline": {
+    "tools_discovered_this_week": 5,
+    "tools_in_evaluation": 3,
+    "tools_recommended_for_pilot": 1,
+    "evaluation_completion_rate": 78.3,
+    "average_evaluation_time_weeks": 3.2
+  },
+  "cost_optimization": {
+    "potential_savings": {
+      "license_optimization": 45000,
+      "usage_based_pricing": 23000,
+      "vendor_negotiation": 67000,
+      "total_annual": 135000
+    },
+    "cost_per_developer": 73.08,
+    "roi_per_developer": 2033.87
+  },
+  "metadata": {
+    "last_updated": "2025-01-15T10:30:00Z",
+    "update_frequency": "Daily",
+    "data_sources": [
+      "Tool usage APIs",
+      "Survey responses",
+      "HR systems",
+      "Financial systems",
+      "Learning management system"
+    ],
+    "version": "2.1",
+    "next_major_review": "2025-02-15"
+  }
+}
