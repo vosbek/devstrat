@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Week Tool Evaluation Framework</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-6xl mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-6">🔬 3-Week Tool Evaluation Framework</h1>
+        
+        <!-- Week 1: Initial Screening -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4 text-blue-600">Week 1: Initial Screening (2-3 hours total)</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Checklist -->
+                <div>
+                    <h3 class="font-medium mb-3">✅ Week 1 Checklist</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Can I install/sign up in 15 minutes?</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Does it work with VS Code/our IDEs?</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Can I complete a basic task in 30 minutes?</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Are there clear docs/tutorials?</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>What's the pricing? Enterprise options?</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Any obvious security/compliance issues?</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Is the company/project actively maintained?</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Quick Notes -->
+                <div>
+                    <h3 class="font-medium mb-3">📝 Quick Notes Template</h3>
+                    <textarea 
+                        placeholder="Tool: [Name]
+First Impression: [Good/Bad/Meh]
+Works with our stack: [Yes/No/Partially]
+Learning curve: [Easy/Medium/Hard]
+Pricing: [$ per user or free]
+Red flags: [Any concerns]
+Next step: [Continue/Stop/Watch]"
+                        rows="10"
+                        class="w-full p-3 border rounded-lg text-sm font-mono"
+                        id="week1Notes"
+                    ></textarea>
+                    <button onclick="saveWeek1()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Save Week 1 Notes
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-medium text-blue-800">🚦 Week 1 Decision Point</h4>
+                <p class="text-sm text-blue-700 mt-1">
+                    If you can't get basic value in 1-2 hours, it's probably not ready for enterprise use. 
+                    Move to "Watch" list unless it solves a critical problem we can't solve otherwise.
+                </p>
+            </div>
+        </div>
+
+        <!-- Week 2: Technical Deep Dive -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4 text-green-600">Week 2: Technical Deep Dive (4-6 hours total)</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Technical Tests -->
+                <div>
+                    <h3 class="font-medium mb-3">🔧 Technical Tests</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 border rounded-lg">
+                            <h4 class="font-medium text-sm">Real Code Test (2 hours)</h4>
+                            <p class="text-sm text-gray-600">Use it on actual Nationwide codebase. Pick 3 representative tasks:</p>
+                            <div class="mt-2 space-y-1 text-sm">
+                                <div>• Simple task (function generation)</div>
+                                <div>• Medium task (refactoring)</div>
+                                <div>• Complex task (architecture change)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 border rounded-lg">
+                            <h4 class="font-medium text-sm">Integration Test (1 hour)</h4>
+                            <div class="mt-2 space-y-1 text-sm">
+                                <div>• Works with our Git workflow?</div>
+                                <div>• Plays nice with existing tools?</div>
+                                <div>• Performance impact on IDE?</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 border rounded-lg">
+                            <h4 class="font-medium text-sm">Scale Test (1 hour)</h4>
+                            <div class="mt-2 space-y-1 text-sm">
+                                <div>• Works on large files (>1000 lines)?</div>
+                                <div>• Handles complex projects?</div>
+                                <div>• Multiple file operations?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scoring Framework -->
+                <div>
+                    <h3 class="font-medium mb-3">📊 Quick Scoring (1-10)</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Ease of Use:</span>
+                            <input type="range" min="1" max="10" class="w-24" id="easeOfUse">
+                            <span class="text-sm w-8" id="easeOfUseValue">5</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Code Quality:</span>
+                            <input type="range" min="1" max="10" class="w-24" id="codeQuality">
+                            <span class="text-sm w-8" id="codeQualityValue">5</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Speed/Performance:</span>
+                            <input type="range" min="1" max="10" class="w-24" id="performance">
+                            <span class="text-sm w-8" id="performanceValue">5</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Integration:</span>
+                            <input type="range" min="1" max="10" class="w-24" id="integration">
+                            <span class="text-sm w-8" id="integrationValue">5</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Enterprise Readiness:</span>
+                            <input type="range" min="1" max="10" class="w-24" id="enterprise">
+                            <span class="text-sm w-8" id="enterpriseValue">5</span>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-gray-50 rounded-lg">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Overall Score:</span>
+                                <span class="font-bold text-lg" id="overallScore">5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="font-medium mb-3">📝 Week 2 Detailed Notes</h3>
+                <textarea 
+                    placeholder="What worked well:
+- 
+
+What didn't work:
+- 
+
+Compared to [current tool]:
+- 
+
+Developer feedback (if you got any):
+- 
+
+Technical concerns:
+- 
+
+Would I recommend this to my team? Why/why not:
+- "
+                    rows="8"
+                    class="w-full p-3 border rounded-lg text-sm font-mono"
+                    id="week2Notes"
+                ></textarea>
+                <button onclick="saveWeek2()" class="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                    Save Week 2 Assessment
+                </button>
+            </div>
+        </div>
+
+        <!-- Week 3: Business Case -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4 text-purple-600">Week 3: Business Case Development (2-3 hours total)</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- ROI Calculator -->
+                <div>
+                    <h3 class="font-medium mb-3">💰 Simple ROI Calculator</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Cost per developer per month:</label>
+                            <input type="number" placeholder="20" class="w-full p-2 border rounded" id="costPerDev">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Number of developers for pilot:</label>
+                            <input type="number" placeholder="50" class="w-full p-2 border rounded" id="numDevs">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Time saved per developer per week (hours):</label>
+                            <input type="number" placeholder="2" class="w-full p-2 border rounded" id="timeSaved">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Average developer hourly cost:</label>
+                            <input type="number" placeholder="75" class="w-full p-2 border rounded" id="hourlyCost">
+                        </div>
+                        
+                        <button onclick="calculateROI()" class="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700">
+                            Calculate ROI
+                        </button>
+                        
+                        <div id="roiResults" class="hidden mt-4 p-4 bg-purple-50 rounded-lg">
+                            <h4 class="font-medium text-purple-800">ROI Results:</h4>
+                            <div class="text-sm mt-2">
+                                <div>Monthly Cost: $<span id="monthlyCost">0</span></div>
+                                <div>Monthly Savings: $<span id="monthlySavings">0</span></div>
+                                <div>Monthly ROI: <span id="monthlyROI">0</span>%</div>
+                                <div>Payback Period: <span id="paybackPeriod">0</span> months</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Matrix -->
+                <div>
+                    <h3 class="font-medium mb-3">⚖️ Decision Matrix</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 border rounded-lg">
+                            <h4 class="font-medium text-sm text-green-600">✅ Recommend if:</h4>
+                            <div class="text-sm mt-1 space-y-1">
+                                <div>• Overall score ≥ 7/10</div>
+                                <div>• ROI > 200% in first year</div>
+                                <div>• No major security concerns</div>
+                                <div>• Clear developer value</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 border rounded-lg">
+                            <h4 class="font-medium text-sm text-yellow-600">⏳ Pilot if:</h4>
+                            <div class="text-sm mt-1 space-y-1">
+                                <div>• Overall score 5-7/10</div>
+                                <div>• Solves specific pain point</div>
+                                <div>• Low cost/risk to test</div>
+                                <div>• Growing community/company</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 border rounded-lg">
+                            <h4 class="font-medium text-sm text-red-600">❌ Skip if:</h4>
+                            <div class="text-sm mt-1 space-y-1">
+                                <div>• Overall score < 5/10</div>
+                                <div>• No clear ROI path</div>
+                                <div>• Security/compliance issues</div>
+                                <div>• Too complex for team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="font-medium mb-3">📋 Final Recommendation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <button onclick="setRecommendation('recommend')" class="p-4 border rounded-lg hover:bg-green-50 recommendation-btn" data-rec="recommend">
+                        <div class="font-medium text-green-600">✅ Recommend</div>
+                        <div class="text-sm text-gray-600">Deploy to broader team</div>
+                    </button>
+                    
+                    <button onclick="setRecommendation('pilot')" class="p-4 border rounded-lg hover:bg-yellow-50 recommendation-btn" data-rec="pilot">
+                        <div class="font-medium text-yellow-600">⏳ Limited Pilot</div>
+                        <div class="text-sm text-gray-600">Test with 10-20 devs</div>
+                    </button>
+                    
+                    <button onclick="setRecommendation('skip')" class="p-4 border rounded-lg hover:bg-red-50 recommendation-btn" data-rec="skip">
+                        <div class="font-medium text-red-600">❌ Not Recommended</div>
+                        <div class="text-sm text-gray-600">Pass for now</div>
+                    </button>
+                </div>
+                
+                <textarea 
+                    placeholder="Brief justification for your recommendation (this goes in your report to leadership):"
+                    rows="3"
+                    class="w-full mt-4 p-3 border rounded-lg text-sm"
+                    id="justification"
+                ></textarea>
+                
+                <button onclick="generateReport()" class="mt-4 bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700">
+                    Generate Evaluation Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Generated Report -->
+        <div id="generatedReport" class="hidden bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">📄 Evaluation Report</h2>
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <pre id="reportContent" class="text-sm whitespace-pre-wrap"></pre>
+                <button onclick="copyReport()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Copy to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentRecommendation = '';
+
+        // Update slider values
+        document.querySelectorAll('input[type="range"]').forEach(slider => {
+            slider.addEventListener('input', function() {
+                document.getElementById(this.id + 'Value').textContent = this.value;
+                updateOverallScore();
+            });
+        });
+
+        function updateOverallScore() {
+            const scores = ['easeOfUse', 'codeQuality', 'performance', 'integration', 'enterprise'];
+            const total = scores.reduce((sum, id) => sum + parseInt(document.getElementById(id).value), 0);
+            const average = (total / scores.length).toFixed(1);
+            document.getElementById('overallScore').textContent = average;
+        }
+
+        function calculateROI() {
+            const costPerDev = parseFloat(document.getElementById('costPerDev').value) || 0;
+            const numDevs = parseInt(document.getElementById('numDevs').value) || 0;
+            const timeSaved = parseFloat(document.getElementById('timeSaved').value) || 0;
+            const hourlyCost = parseFloat(document.getElementById('hourlyCost').value) || 0;
+
+            const monthlyCost = costPerDev * numDevs;
+            const monthlySavings = timeSaved * 4.33 * hourlyCost * numDevs; // 4.33 weeks per month
+            const monthlyROI = monthlySavings > 0 ? Math.round(((monthlySavings - monthlyCost) / monthlyCost) * 100) : 0;
+            const paybackPeriod = monthlySavings > 0 ? Math.round(monthlyCost / (monthlySavings - monthlyCost) * 10) / 10 : 999;
+
+            document.getElementById('monthlyCost').textContent = monthlyCost.toLocaleString();
+            document.getElementById('monthlySavings').textContent = monthlySavings.toLocaleString();
+            document.getElementById('monthlyROI').textContent = monthlyROI;
+            document.getElementById('paybackPeriod').textContent = paybackPeriod > 100 ? '∞' : paybackPeriod;
+
+            document.getElementById('roiResults').classList.remove('hidden');
+        }
+
+        function setRecommendation(rec) {
+            currentRecommendation = rec;
+            document.querySelectorAll('.recommendation-btn').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-blue-500');
+            });
+            document.querySelector(`[data-rec="${rec}"]`).classList.add('ring-2', 'ring-blue-500');
+        }
+
+        function generateReport() {
+            const toolName = prompt("Tool name:");
+            if (!toolName) return;
+
+            const week1Notes = document.getElementById('week1Notes').value || 'No notes recorded';
+            const week2Notes = document.getElementById('week2Notes').value || 'No notes recorded';
+            const justification = document.getElementById('justification').value || 'No justification provided';
+            const overallScore = document.getElementById('overallScore').textContent;
+
+            const report = `AI TOOL EVALUATION REPORT
+=============================
+
+Tool: ${toolName}
+Evaluation Period: ${new Date().toLocaleDateString()} (3 weeks)
+Overall Score: ${overallScore}/10
+Recommendation: ${currentRecommendation.toUpperCase()}
+
+WEEK 1 - INITIAL SCREENING
+${week1Notes}
+
+WEEK 2 - TECHNICAL ASSESSMENT
+${week2Notes}
+
+WEEK 3 - BUSINESS CASE
+ROI Analysis:
+- Monthly Cost: $${document.getElementById('monthlyCost').textContent}
+- Monthly Savings: $${document.getElementById('monthlySavings').textContent}
+- ROI: ${document.getElementById('monthlyROI').textContent}%
+
+FINAL RECOMMENDATION
+${justification}
+
+Next Steps:
+${currentRecommendation === 'recommend' ? '• Proceed with broader deployment\n• Develop training materials\n• Set up enterprise licensing' :
+  currentRecommendation === 'pilot' ? '• Set up limited pilot with 10-20 developers\n• Define success metrics\n• Plan 6-week pilot period' :
+  '• Add to "watch" list for future consideration\n• Document key concerns\n• Set review date for 6 months'}
+
+Generated: ${new Date().toLocaleString()}
+Evaluator: [Your name]
+`;
+
+            document.getElementById('reportContent').textContent = report;
+            document.getElementById('generatedReport').classList.remove('hidden');
+        }
+
+        function copyReport() {
+            navigator.clipboard.writeText(document.getElementById('reportContent').textContent)
+                .then(() => alert('Report copied to clipboard!'));
+        }
+
+        function saveWeek1() {
+            localStorage.setItem('week1_notes', document.getElementById('week1Notes').value);
+            alert('Week 1 notes saved!');
+        }
+
+        function saveWeek2() {
+            localStorage.setItem('week2_notes', document.getElementById('week2Notes').value);
+            alert('Week 2 assessment saved!');
+        }
+
+        // Load saved notes
+        window.onload = function() {
+            document.getElementById('week1Notes').value = localStorage.getItem('week1_notes') || '';
+            document.getElementById('week2Notes').value = localStorage.getItem('week2_notes') || '';
+            updateOverallScore();
+        }
+    </script>
+</body>
+</html>

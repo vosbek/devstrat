@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Communication Templates</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-6xl mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-6">📊 Leadership Communication System</h1>
+        <p class="text-gray-600 mb-8">Ready-to-use templates for communicating AI strategy progress to executives</p>
+
+        <!-- Weekly Update Template -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">📧 Weekly Executive Update (2-minute read)</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Template -->
+                <div>
+                    <h3 class="font-medium mb-3">Template Structure</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="space-y-3 text-sm">
+                            <div class="p-2 bg-green-100 rounded">
+                                <strong>🎯 This Week's Win:</strong> [One specific achievement with numbers]
+                            </div>
+                            <div class="p-2 bg-blue-100 rounded">
+                                <strong>🔍 What We're Evaluating:</strong> [Tool name + why it matters]
+                            </div>
+                            <div class="p-2 bg-yellow-100 rounded">
+                                <strong>⚠️ Decision Needed:</strong> [If any - otherwise skip]
+                            </div>
+                            <div class="p-2 bg-purple-100 rounded">
+                                <strong>📈 Key Metric:</strong> [One number that shows progress]
+                            </div>
+                            <div class="p-2 bg-gray-100 rounded">
+                                <strong>🎯 Next Week:</strong> [What you're focusing on]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Generator -->
+                <div>
+                    <h3 class="font-medium mb-3">Generate This Week's Update</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">This Week's Win:</label>
+                            <input type="text" placeholder="e.g., Cursor pilot exceeded 8/10 satisfaction with 35% productivity gain" class="w-full p-2 border rounded text-sm" id="weekWin">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">What We're Evaluating:</label>
+                            <input type="text" placeholder="e.g., Windsurf IDE - on-premises AI development environment" class="w-full p-2 border rounded text-sm" id="evaluating">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Decision Needed (optional):</label>
+                            <input type="text" placeholder="e.g., $150K budget approval for Cursor expansion" class="w-full p-2 border rounded text-sm" id="decision">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Key Metric:</label>
+                            <input type="text" placeholder="e.g., 87% developer adoption rate (+12% from last month)" class="w-full p-2 border rounded text-sm" id="metric">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Next Week Focus:</label>
+                            <input type="text" placeholder="e.g., Complete Windsurf technical evaluation and ROI analysis" class="w-full p-2 border rounded text-sm" id="nextWeek">
+                        </div>
+                        
+                        <button onclick="generateWeeklyUpdate()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                            Generate Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generated Email -->
+            <div id="generatedEmail" class="hidden mt-6">
+                <h3 class="font-medium mb-3">📧 Generated Email</h3>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="mb-2">
+                        <strong>Subject:</strong> AI Strategy Update - Week of <span id="weekOf"></span>
+                    </div>
+                    <div class="border-t pt-2 mt-2">
+                        <pre id="emailContent" class="text-sm whitespace-pre-wrap"></pre>
+                    </div>
+                </div>
+                <button onclick="copyEmail()" class="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                    Copy Email
+                </button>
+            </div>
+        </div>
+
+        <!-- Monthly Business Review -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">📈 Monthly Business Review Template</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Business Impact -->
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-medium mb-3 text-green-600">💰 Business Impact</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Monthly ROI:</label>
+                            <input type="number" placeholder="2400000" class="w-full p-2 border rounded text-sm" id="monthlyROI">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Developer Adoption %:</label>
+                            <input type="number" placeholder="87" class="w-full p-2 border rounded text-sm" id="adoption">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Productivity Gain %:</label>
+                            <input type="number" placeholder="32" class="w-full p-2 border rounded text-sm" id="productivity">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Developer Satisfaction (1-5):</label>
+                            <input type="number" step="0.1" placeholder="4.2" class="w-full p-2 border rounded text-sm" id="satisfaction">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Progress -->
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-medium mb-3 text-blue-600">🎯 Strategic Progress</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Tools Evaluated This Month:</label>
+                            <input type="number" placeholder="3" class="w-full p-2 border rounded text-sm" id="toolsEvaluated">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">New Tools Deployed:</label>
+                            <input type="number" placeholder="1" class="w-full p-2 border rounded text-sm" id="toolsDeployed">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Training Sessions Completed:</label>
+                            <input type="number" placeholder="8" class="w-full p-2 border rounded text-sm" id="trainingSessions">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Developers Trained:</label>
+                            <input type="number" placeholder="156" class="w-full p-2 border rounded text-sm" id="developersTrained">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Month Focus -->
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-medium mb-3 text-purple-600">🚀 Next Month Focus</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Top Priority Tool:</label>
+                            <input type="text" placeholder="Windsurf IDE expansion" class="w-full p-2 border rounded text-sm" id="topPriority">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Investment Request ($):</label>
+                            <input type="number" placeholder="150000" class="w-full p-2 border rounded text-sm" id="investment">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Expected ROI (%):</label>
+                            <input type="number" placeholder="240" class="w-full p-2 border rounded text-sm" id="expectedROI">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Timeline (weeks):</label>
+                            <input type="number" placeholder="8" class="w-full p-2 border rounded text-sm" id="timeline">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="generateMonthlyReport()" class="mt-6 w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700">
+                Generate Monthly Report
+            </button>
+
+            <!-- Generated Report -->
+            <div id="monthlyReport" class="hidden mt-6">
+                <h3 class="font-medium mb-3">📄 Monthly Business Review</h3>
+                <div class="bg-gray-50 p-4 rounded-lg max-h-96 overflow-y-auto">
+                    <pre id="monthlyContent" class="text-sm whitespace-pre-wrap"></pre>
+                </div>
+                <button onclick="copyMonthlyReport()" class="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                    Copy Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Emergency Communication -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">🚨 Emergency Communication Templates</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Budget Request -->
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-medium mb-3 text-red-600">💰 Urgent Budget Request</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Tool/Initiative:</label>
+                            <input type="text" placeholder="Cursor Enterprise License" class="w-full p-2 border rounded text-sm" id="budgetTool">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Amount Needed:</label>
+                            <input type="number" placeholder="150000" class="w-full p-2 border rounded text-sm" id="budgetAmount">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Urgency Reason:</label>
+                            <input type="text" placeholder="Pilot exceeded goals, demand from 200+ developers" class="w-full p-2 border rounded text-sm" id="urgencyReason">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Expected ROI:</label>
+                            <input type="text" placeholder="240% in first year" class="w-full p-2 border rounded text-sm" id="budgetROI">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Decision Deadline:</label>
+                            <input type="date" class="w-full p-2 border rounded text-sm" id="deadline">
+                        </div>
+                        <button onclick="generateBudgetRequest()" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">
+                            Generate Request
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Risk Alert -->
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-medium mb-3 text-orange-600">⚠️ Risk Alert</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Risk Type:</label>
+                            <select class="w-full p-2 border rounded text-sm" id="riskType">
+                                <option>Vendor concentration</option>
+                                <option>Security vulnerability</option>
+                                <option>Compliance issue</option>
+                                <option>Competitive threat</option>
+                                <option>Developer resistance</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Specific Issue:</label>
+                            <input type="text" placeholder="87% dependency on single vendor (GitHub)" class="w-full p-2 border rounded text-sm" id="riskIssue">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Potential Impact:</label>
+                            <input type="text" placeholder="Price increases, service disruptions, vendor lock-in" class="w-full p-2 border rounded text-sm" id="riskImpact">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Recommended Action:</label>
+                            <input type="text" placeholder="Diversify with Cursor and AWS Strands evaluation" class="w-full p-2 border rounded text-sm" id="riskAction">
+                        </div>
+                        <button onclick="generateRiskAlert()" class="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700">
+                            Generate Alert
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generated Comms -->
+            <div id="emergencyComms" class="hidden mt-6">
+                <h3 class="font-medium mb-3">📄 Generated Communication</h3>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <pre id="emergencyContent" class="text-sm whitespace-pre-wrap"></pre>
+                </div>
+                <button onclick="copyEmergencyComm()" class="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                    Copy Communication
+                </button>
+            </div>
+        </div>
+
+        <!-- Communication Guidelines -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">📋 Executive Communication Guidelines</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Do's -->
+                <div class="p-4 bg-green-50 rounded-lg">
+                    <h3 class="font-medium text-green-800 mb-3">✅ Do's</h3>
+                    <div class="text-sm space-y-2 text-green-700">
+                        <div>• Lead with business impact (ROI, productivity, cost savings)</div>
+                        <div>• Use specific numbers and timeframes</div>
+                        <div>• Compare to industry benchmarks when possible</div>
+                        <div>• Include both successes and challenges</div>
+                        <div>• Keep technical details to minimum</div>
+                        <div>• Always include next steps and timelines</div>
+                        <div>• Mention competitive positioning</div>
+                        <div>• Highlight developer satisfaction and adoption</div>
+                    </div>
+                </div>
+
+                <!-- Don'ts -->
+                <div class="p-4 bg-red-50 rounded-lg">
+                    <h3 class="font-medium text-red-800 mb-3">❌ Don'ts</h3>
+                    <div class="text-sm space-y-2 text-red-700">
+                        <div>• Don't lead with technical features</div>
+                        <div>• Don't use jargon without explanation</div>
+                        <div>• Don't present problems without solutions</div>
+                        <div>• Don't make it longer than 2 minutes to read</div>
+                        <div>• Don't surprise them with bad news in group settings</div>
+                        <div>• Don't ask for budget without clear ROI</div>
+                        <div>• Don't oversell or make unrealistic promises</div>
+                        <div>• Don't bury the key message in details</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                <h3 class="font-medium text-blue-800 mb-2">🎯 Executive Attention Formula</h3>
+                <p class="text-sm text-blue-700">
+                    <strong>Hook (10 seconds):</strong> One compelling number or achievement<br>
+                    <strong>Context (30 seconds):</strong> Why this matters to business goals<br>
+                    <strong>Action (20 seconds):</strong> What you need from them<br>
+                    <strong>Confidence (10 seconds):</strong> Why this will succeed
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateWeeklyUpdate() {
+            const weekWin = document.getElementById('weekWin').value;
+            const evaluating = document.getElementById('evaluating').value;
+            const decision = document.getElementById('decision').value;
+            const metric = document.getElementById('metric').value;
+            const nextWeek = document.getElementById('nextWeek').value;
+
+            const today = new Date();
+            const weekStart = new Date(today.setDate(today.getDate() - today.getDay()));
+            document.getElementById('weekOf').textContent = weekStart.toLocaleDateString();
+
+            let email = `Hi [Leadership Team],
+
+Quick AI strategy update for this week:
+
+🎯 THIS WEEK'S WIN
+${weekWin || '[Add your win here]'}
+
+🔍 WHAT WE'RE EVALUATING
+${evaluating || '[Add current evaluation]'}`;
+
+            if (decision.trim()) {
+                email += `\n\n⚠️ DECISION NEEDED
+${decision}`;
+            }
+
+            email += `\n\n📈 KEY METRIC
+${metric || '[Add key metric]'}
+
+🎯 NEXT WEEK FOCUS
+${nextWeek || '[Add next week focus]'}
+
+Questions? Happy to discuss.
+
+Best,
+[Your name]`;
+
+            document.getElementById('emailContent').textContent = email;
+            document.getElementById('generatedEmail').classList.remove('hidden');
+        }
+
+        function copyEmail() {
+            navigator.clipboard.writeText(document.getElementById('emailContent').textContent)
+                .then(() => alert('Email copied to clipboard!'));
+        }
+
+        function generateMonthlyReport() {
+            const monthlyROI = document.getElementById('monthlyROI').value;
+            const adoption = document.getElementById('adoption').value;
+            const productivity = document.getElementById('productivity').value;
+            const satisfaction = document.getElementById('satisfaction').value;
+            const toolsEvaluated = document.getElementById('toolsEvaluated').value;
+            const toolsDeployed = document.getElementById('toolsDeployed').value;
+            const trainingSessions = document.getElementById('trainingSessions').value;
+            const developersTrained = document.getElementById('developersTrained').value;
+            const topPriority = document.getElementById('topPriority').value;
+            const investment = document.getElementById('investment').value;
+            const expectedROI = document.getElementById('expectedROI').value;
+            const timeline = document.getElementById('timeline').value;
+
+            const currentMonth = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+            const report = `AI STRATEGY MONTHLY BUSINESS REVIEW
+${currentMonth}
+
+EXECUTIVE SUMMARY
+✅ Monthly ROI: $${parseInt(monthlyROI || 0).toLocaleString()}
+✅ Developer Adoption: ${adoption || 0}%
+✅ Productivity Gain: ${productivity || 0}%
+✅ Developer Satisfaction: ${satisfaction || 0}/5
+
+STRATEGIC PROGRESS
+• Tools Evaluated: ${toolsEvaluated || 0}
+• New Tools Deployed: ${toolsDeployed || 0}  
+• Training Sessions: ${trainingSessions || 0}
+• Developers Trained: ${developersTrained || 0}
+
+NEXT MONTH PRIORITIES
+🎯 Top Priority: ${topPriority || '[Add priority]'}
+💰 Investment Request: $${parseInt(investment || 0).toLocaleString()}
+📈 Expected ROI: ${expectedROI || 0}%
+⏱️ Timeline: ${timeline || 0} weeks
+
+COMPETITIVE POSITION
+We maintain top 15% position in insurance industry AI adoption.
+
+RISK ASSESSMENT
+[Add key risks and mitigation strategies]
+
+INVESTMENT RECOMMENDATION
+[Add specific recommendation with justification]
+
+Questions for Discussion:
+1. Approval for ${topPriority || 'priority initiative'} investment?
+2. Resource allocation for next quarter?
+3. Strategic priorities alignment?
+
+Prepared by: [Your name]
+Date: ${new Date().toLocaleDateString()}`;
+
+            document.getElementById('monthlyContent').textContent = report;
+            document.getElementById('monthlyReport').classList.remove('hidden');
+        }
+
+        function copyMonthlyReport() {
+            navigator.clipboard.writeText(document.getElementById('monthlyContent').textContent)
+                .then(() => alert('Monthly report copied to clipboard!'));
+        }
+
+        function generateBudgetRequest() {
+            const tool = document.getElementById('budgetTool').value;
+            const amount = document.getElementById('budgetAmount').value;
+            const reason = document.getElementById('urgencyReason').value;
+            const roi = document.getElementById('budgetROI').value;
+            const deadline = document.getElementById('deadline').value;
+
+            const request = `URGENT: Budget Request - ${tool || 'AI Tool Investment'}
+
+EXECUTIVE SUMMARY
+Request: $${parseInt(amount || 0).toLocaleString()} for ${tool || 'AI tool deployment'}
+Timeline: Decision needed by ${deadline || '[date]'}
+Expected ROI: ${roi || '[ROI]'}
+
+BUSINESS JUSTIFICATION
+${reason || '[Add urgency reason]'}
+
+FINANCIAL IMPACT
+• Investment: $${parseInt(amount || 0).toLocaleString()}
+• Expected Annual Return: ${roi || '[ROI]'}
+• Payback Period: [Calculate based on ROI]
+
+RISK OF DELAY
+• Lost productivity gains
+• Developer satisfaction impact
+• Competitive disadvantage
+
+RECOMMENDATION
+Approve immediate budget allocation to capitalize on proven results.
+
+Next Steps:
+1. Budget approval by ${deadline || '[date]'}
+2. Procurement and deployment: [timeline]
+3. Training and rollout: [timeline]
+
+Questions? Available for immediate discussion.
+
+[Your name]
+[Date]`;
+
+            document.getElementById('emergencyContent').textContent = request;
+            document.getElementById('emergencyComms').classList.remove('hidden');
+        }
+
+        function generateRiskAlert() {
+            const riskType = document.getElementById('riskType').value;
+            const issue = document.getElementById('riskIssue').value;
+            const impact = document.getElementById('riskImpact').value;
+            const action = document.getElementById('riskAction').value;
+
+            const alert = `RISK ALERT: ${riskType}
+
+ISSUE IDENTIFIED
+${issue || '[Describe specific risk]'}
+
+POTENTIAL IMPACT
+${impact || '[Describe potential consequences]'}
+
+RECOMMENDED MITIGATION
+${action || '[Describe recommended actions]'}
+
+URGENCY LEVEL
+[High/Medium/Low] - [Justify urgency level]
+
+NEXT STEPS
+1. [Immediate action required]
+2. [Medium-term mitigation]
+3. [Long-term prevention]
+
+Timeline for Action:
+• Immediate (1 week): [action]
+• Short-term (1 month): [action]
+• Long-term (3 months): [action]
+
+Resources Required:
+• Budget: [if applicable]
+• Personnel: [if applicable]
+• Timeline: [if applicable]
+
+Available for immediate discussion.
+
+[Your name]
+[Date]`;
+
+            document.getElementById('emergencyContent').textContent = alert;
+            document.getElementById('emergencyComms').classList.remove('hidden');
+        }
+
+        function copyEmergencyComm() {
+            navigator.clipboard.writeText(document.getElementById('emergencyContent').textContent)
+                .then(() => alert('Communication copied to clipboard!'));
+        }
+    </script>
+</body>
+</html>

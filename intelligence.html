@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Intelligence Gathering - AI Strategy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto p-6">
+        <h1 class="text-2xl font-bold mb-6">📡 Weekly AI Tool Intelligence</h1>
+        
+        <!-- Your 30-Minute Monday Routine -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">⏰ Your 30-Minute Monday Routine</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Discovery Sources (15 minutes) -->
+                <div>
+                    <h3 class="font-medium mb-3">🔍 Discovery Sources (15 min)</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <a href="https://github.com/trending?l=typescript&since=weekly" target="_blank" class="text-blue-600 hover:underline">
+                                GitHub Trending - TypeScript (5 min)
+                            </a>
+                        </label>
+                        
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <a href="https://www.producthunt.com/topics/developer-tools" target="_blank" class="text-blue-600 hover:underline">
+                                Product Hunt - Developer Tools (5 min)
+                            </a>
+                        </label>
+                        
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <a href="https://news.ycombinator.com/news" target="_blank" class="text-blue-600 hover:underline">
+                                Hacker News - Check for AI tools (5 min)
+                            </a>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Quick Capture (15 minutes) -->
+                <div>
+                    <h3 class="font-medium mb-3">📝 Quick Capture (15 min)</h3>
+                    <textarea 
+                        placeholder="Tool Name | Source | Why Interesting | Next Action"
+                        rows="8"
+                        class="w-full p-3 border rounded-lg text-sm"
+                        id="weeklyFindings"
+                    ></textarea>
+                    <button onclick="saveFindings()" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Save This Week's Findings
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intelligence Sources -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">🎯 Your Intelligence Network</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Daily Sources -->
+                <div>
+                    <h3 class="font-medium mb-3 text-green-600">Daily (5 min)</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://twitter.com/search?q=AI%20developer%20tools&src=typed_query&f=live" target="_blank" class="block text-blue-600 hover:underline">
+                            Twitter: AI developer tools
+                        </a>
+                        <a href="https://www.reddit.com/r/MachineLearning/new/" target="_blank" class="block text-blue-600 hover:underline">
+                            Reddit: r/MachineLearning
+                        </a>
+                        <a href="https://discord.com/channels/1097071652904239114/1097084977648054292" target="_blank" class="block text-blue-600 hover:underline">
+                            Discord: AI Developer Chat
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Weekly Sources -->
+                <div>
+                    <h3 class="font-medium mb-3 text-blue-600">Weekly (15 min)</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://github.com/trending?since=weekly" target="_blank" class="block text-blue-600 hover:underline">
+                            GitHub Trending (Weekly)
+                        </a>
+                        <a href="https://www.producthunt.com/categories/developer-tools" target="_blank" class="block text-blue-600 hover:underline">
+                            Product Hunt Dev Tools
+                        </a>
+                        <a href="https://www.indiehackers.com/products?topic=developer-tools" target="_blank" class="block text-blue-600 hover:underline">
+                            Indie Hackers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Monthly Sources -->
+                <div>
+                    <h3 class="font-medium mb-3 text-purple-600">Monthly (30 min)</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" class="block text-blue-600 hover:underline">
+                            TechCrunch AI News
+                        </a>
+                        <a href="https://venturebeat.com/ai/" target="_blank" class="block text-blue-600 hover:underline">
+                            VentureBeat AI
+                        </a>
+                        <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" class="block text-blue-600 hover:underline">
+                            The Verge AI
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Evaluation -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-semibold mb-4">⚡ 5-Minute Tool Evaluation</h2>
+            
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-medium mb-3">For each tool you find, ask:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-medium text-sm mb-2">🎯 Immediate Questions</h4>
+                        <div class="space-y-1 text-sm">
+                            <div>• What problem does this solve?</div>
+                            <div>• Who's using it? (GitHub stars, users)</div>
+                            <div>• What's the business model?</div>
+                            <div>• How mature is it? (version, age)</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-sm mb-2">⚖️ Quick Filters</h4>
+                        <div class="space-y-1 text-sm">
+                            <div>• Does it work with our tech stack?</div>
+                            <div>• Can we pilot it easily?</div>
+                            <div>• Is it enterprise-ready?</div>
+                            <div>• What's the learning curve?</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="font-medium text-sm mb-2">🚦 Decision Framework</h4>
+                    <div class="text-sm text-gray-600">
+                        <span class="font-medium text-green-600">Evaluate Now:</span> Solves real problem + Easy to pilot + Active development<br>
+                        <span class="font-medium text-yellow-600">Watch:</span> Interesting but early/complex<br>
+                        <span class="font-medium text-red-600">Skip:</span> Niche use case or dying project
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveFindings() {
+            const findings = document.getElementById('weeklyFindings').value;
+            if (findings.trim()) {
+                // Save to localStorage for now
+                const today = new Date().toISOString().split('T')[0];
+                localStorage.setItem(`findings_${today}`, findings);
+                alert('Findings saved! You can copy/paste this into your tracking system.');
+                
+                // Clear the textarea
+                document.getElementById('weeklyFindings').value = '';
+            }
+        }
+
+        // Load any existing findings for today
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            const saved = localStorage.getItem(`findings_${today}`);
+            if (saved) {
+                document.getElementById('weeklyFindings').value = saved;
+            }
+        }
+    </script>
+</body>
+</html>
