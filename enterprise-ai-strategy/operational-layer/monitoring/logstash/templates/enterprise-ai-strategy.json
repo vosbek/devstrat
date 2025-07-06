@@ -1,0 +1,101 @@
+{
+  "index_patterns": ["enterprise-ai-strategy-*"],
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "index.refresh_interval": "5s",
+    "index.codec": "best_compression",
+    "index.mapping.total_fields.limit": 2000
+  },
+  "mappings": {
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "@version": {
+        "type": "keyword"
+      },
+      "message": {
+        "type": "text",
+        "analyzer": "standard"
+      },
+      "level": {
+        "type": "keyword"
+      },
+      "logger_name": {
+        "type": "keyword"
+      },
+      "service": {
+        "type": "keyword"
+      },
+      "hostname": {
+        "type": "keyword"
+      },
+      "severity": {
+        "type": "keyword"
+      },
+      "agent_name": {
+        "type": "keyword"
+      },
+      "duration_ms": {
+        "type": "float"
+      },
+      "method": {
+        "type": "keyword"
+      },
+      "endpoint": {
+        "type": "keyword"
+      },
+      "status_code": {
+        "type": "integer"
+      },
+      "response_time": {
+        "type": "float"
+      },
+      "container_id": {
+        "type": "keyword"
+      },
+      "remote_addr": {
+        "type": "ip"
+      },
+      "user_id": {
+        "type": "keyword"
+      },
+      "session_id": {
+        "type": "keyword"
+      },
+      "job_id": {
+        "type": "keyword"
+      },
+      "error_code": {
+        "type": "keyword"
+      },
+      "stack_trace": {
+        "type": "text",
+        "index": false
+      },
+      "geoip": {
+        "properties": {
+          "location": {
+            "type": "geo_point"
+          },
+          "country_name": {
+            "type": "keyword"
+          },
+          "city_name": {
+            "type": "keyword"
+          },
+          "region_name": {
+            "type": "keyword"
+          }
+        }
+      },
+      "tags": {
+        "type": "keyword"
+      }
+    }
+  },
+  "aliases": {
+    "enterprise-ai-strategy-current": {}
+  }
+}

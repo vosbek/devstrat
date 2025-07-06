@@ -1,0 +1,353 @@
+/**
+ * Enterprise AI Strategy - Shields.io Badge Styling
+ * Custom styles for dynamic badges and status indicators
+ */
+
+/* Badge container styles */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+    align-items: center;
+}
+
+.badge-container.vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.badge-container.center {
+    justify-content: center;
+}
+
+.badge-container.spaced {
+    gap: 16px;
+}
+
+/* Individual badge styles */
+.badge-shield {
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.badge-shield:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Badge link styles */
+a .badge-shield {
+    cursor: pointer;
+}
+
+a:hover .badge-shield {
+    filter: brightness(1.1);
+}
+
+/* Responsive badge sizing */
+@media (max-width: 768px) {
+    .badge-container {
+        gap: 6px;
+    }
+    
+    .badge-shield {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Badge animation for updates */
+@keyframes badge-update {
+    0% { opacity: 0.5; transform: scale(0.95); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.badge-shield.updating {
+    animation: badge-update 0.6s ease-in-out;
+}
+
+/* Status indicator styles */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 4px;
+}
+
+.status-indicator.excellent {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-indicator.good {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.status-indicator.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-indicator.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Metric cards with badges */
+.metric-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card .badge-container {
+    margin-top: 12px;
+}
+
+.metric-card h3 {
+    margin-bottom: 8px;
+    color: #495057;
+    font-size: 18px;
+}
+
+.metric-card .metric-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff;
+    margin: 8px 0;
+}
+
+.metric-card .metric-trend {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.metric-card .metric-trend.positive {
+    color: #28a745;
+}
+
+.metric-card .metric-trend.negative {
+    color: #dc3545;
+}
+
+.metric-card .metric-trend.neutral {
+    color: #6c757d;
+}
+
+/* Badge grid layouts */
+.badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.badge-grid-item {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.badge-grid-item h4 {
+    margin-bottom: 12px;
+    color: #495057;
+    font-size: 16px;
+}
+
+/* Executive summary badges */
+.executive-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 24px 0;
+}
+
+.executive-summary h2 {
+    margin-bottom: 16px;
+    color: white;
+}
+
+.executive-summary .badge-container {
+    margin-top: 16px;
+}
+
+.executive-summary .badge-shield {
+    filter: brightness(1.1);
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    .metric-card {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .metric-card h3 {
+        color: #e2e8f0;
+    }
+    
+    .badge-grid-item {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .badge-grid-item h4 {
+        color: #e2e8f0;
+    }
+}
+
+/* Loading states */
+.badge-loading {
+    opacity: 0.6;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+/* Tooltip styles for badges */
+.badge-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.badge-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1001;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.badge-tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.badge-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Print styles */
+@media print {
+    .badge-shield {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+        padding: 2px 6px !important;
+        border-radius: 3px !important;
+        font-size: 12px !important;
+        display: inline-block !important;
+    }
+    
+    .badge-container {
+        break-inside: avoid;
+    }
+    
+    .metric-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Accessibility improvements */
+.badge-shield:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.badge-container[role="group"] {
+    margin: 16px 0;
+}
+
+.badge-container[role="group"]::before {
+    content: attr(aria-label);
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .badge-shield {
+        border: 2px solid currentColor;
+        font-weight: bold;
+    }
+    
+    .metric-card {
+        border: 2px solid currentColor;
+    }
+    
+    .status-indicator {
+        border-width: 2px;
+        font-weight: bold;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .badge-shield {
+        transition: none;
+    }
+    
+    .badge-shield:hover {
+        transform: none;
+    }
+    
+    .badge-shield.updating {
+        animation: none;
+    }
+    
+    .badge-loading {
+        animation: none;
+        opacity: 0.7;
+    }
+}
