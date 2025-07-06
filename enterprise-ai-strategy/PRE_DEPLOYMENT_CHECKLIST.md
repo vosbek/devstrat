@@ -60,12 +60,16 @@
   - [ ] `bedrock:GetFoundationModel`
 - [ ] **AWS CLI configured** (optional but recommended for testing)
 
-### **Anthropic API Access**
-- [ ] **Anthropic account** with API access
-- [ ] **API key generated** with appropriate rate limits
-- [ ] **Claude 3.5 Sonnet access** confirmed
-- [ ] **API quota sufficient** for expected usage (check billing/limits)
-- [ ] **API key tested** with simple request
+### **AWS Bedrock Inference Profiles (Recommended)**
+- [ ] **Bedrock inference profiles** configured by AWS admin
+- [ ] **Claude 3.5 Sonnet** available in your inference profile
+- [ ] **Appropriate quotas** configured for expected usage
+- [ ] **Cost controls** configured through inference profile
+- [ ] **Profile ARN or ID** obtained from AWS admin
+- [ ] **Alternative: Direct Anthropic API** (if not using inference profiles)
+  - [ ] Anthropic account with API access
+  - [ ] API key generated with appropriate rate limits
+  - [ ] Claude 3.5 Sonnet access confirmed
 
 ### **Corporate Integration Accounts**
 - [ ] **LDAP/AD service account** (if using corporate auth)

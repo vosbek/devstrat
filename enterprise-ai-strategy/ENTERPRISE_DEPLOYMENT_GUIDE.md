@@ -19,7 +19,7 @@
 
 ### **Required Corporate Credentials**
 - [ ] **AWS Account**: Bedrock access in approved region (us-east-1)
-- [ ] **Anthropic API Key**: Claude API access approved by security team
+- [ ] **Bedrock Inference Profiles**: Configured and accessible (recommended for enterprise)
 - [ ] **Corporate Email**: For system notifications and alerts
 - [ ] **LDAP/AD Integration**: If using corporate authentication
 - [ ] **SSL Certificates**: For production HTTPS deployment
@@ -119,8 +119,14 @@ AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 AWS_DEFAULT_REGION=us-east-1
 
-# Anthropic API Key (GET FROM YOUR AI PROCUREMENT TEAM)
-ANTHROPIC_API_KEY=sk-ant-api03-your-actual-key-here
+# AWS Bedrock Inference Profile (RECOMMENDED FOR ENTERPRISE)
+# Get from your AWS Bedrock admin - provides better cost control and governance
+BEDROCK_INFERENCE_PROFILE_ID=your-inference-profile-id
+# OR use ARN format:
+# BEDROCK_INFERENCE_PROFILE_ARN=arn:aws:bedrock:us-east-1:123456789012:inference-profile/your-profile-id
+
+# Anthropic API Key (OPTIONAL - only if NOT using Bedrock inference profiles)
+# ANTHROPIC_API_KEY=sk-ant-api03-your-actual-key-here
 
 # Corporate Database (UPDATE FOR YOUR ENVIRONMENT)
 POSTGRES_PASSWORD=YourSecurePassword123!

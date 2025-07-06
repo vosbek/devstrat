@@ -2,7 +2,7 @@
 AWS Configuration for Enterprise AI Strategy Command Center
 """
 import os
-from typing import Dict, List
+from typing import Dict, List, Optional
 from dataclasses import dataclass
 from enum import Enum
 
@@ -20,6 +20,8 @@ class AWSConfig:
     bedrock_model: str = BedrockModels.CLAUDE_3_5_SONNET.value
     max_tokens: int = 4000
     temperature: float = 0.3
+    inference_profile_id: Optional[str] = None
+    inference_profile_arn: Optional[str] = None
 
 @dataclass
 class AgentConfig:
@@ -62,5 +64,7 @@ def get_aws_config() -> AWSConfig:
         profile=os.getenv("AWS_PROFILE", DEFAULT_AWS_CONFIG.profile),
         bedrock_model=os.getenv("BEDROCK_MODEL", DEFAULT_AWS_CONFIG.bedrock_model),
         max_tokens=int(os.getenv("MAX_TOKENS", DEFAULT_AWS_CONFIG.max_tokens)),
-        temperature=float(os.getenv("TEMPERATURE", DEFAULT_AWS_CONFIG.temperature))
+        temperature=float(os.getenv("TEMPERATURE", DEFAULT_AWS_CONFIG.temperature)),
+        inference_profile_id=os.getenv("BEDROCK_INFERENCE_PROFILE_ID"),
+        inference_profile_arn=os.getenv("BEDROCK_INFERENCE_PROFILE_ARN")
     )

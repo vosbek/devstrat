@@ -33,17 +33,30 @@ class BaseAgent(ABC):
                  model_id: str = "anthropic.claude-3-5-sonnet-20241022-v2:0",
                  region: str = "us-east-1",
                  max_tokens: int = 4000,
-                 temperature: float = 0.3):
+                 temperature: float = 0.3,
+                 inference_profile_id: str = None,
+                 inference_profile_arn: str = None):
         self.agent_name = agent_name
         self.model_id = model_id
         self.region = region
         self.max_tokens = max_tokens
         self.temperature = temperature
+        self.inference_profile_id = inference_profile_id
+        self.inference_profile_arn = inference_profile_arn
         
         # Initialize AWS Bedrock client
         self.bedrock_client = boto3.client('bedrock-runtime', region_name=region)
         
-        logger.info(f"Initialized {agent_name} with model {model_id}")
+        # Determine if using inference profile or direct model
+        if self.inference_profile_arn:
+            self.target_model = self.inference_profile_arn
+            logger.info(f"Initialized {agent_name} with inference profile ARN: {self.inference_profile_arn}")
+        elif self.inference_profile_id:
+            self.target_model = self.inference_profile_id  
+            logger.info(f"Initialized {agent_name} with inference profile ID: {self.inference_profile_id}")
+        else:
+            self.target_model = self.model_id
+            logger.info(f"Initialized {agent_name} with direct model: {model_id}")
     
     def _call_bedrock(self, prompt: str, system_prompt: str = "") -> str:
         """Call AWS Bedrock Claude Sonnet"""
@@ -64,9 +77,9 @@ class BaseAgent(ABC):
             if system_prompt:
                 body["system"] = system_prompt
             
-            # Call Bedrock
+            # Call Bedrock (with inference profile support)
             response = self.bedrock_client.invoke_model(
-                modelId=self.model_id,
+                modelId=self.target_model,
                 body=json.dumps(body),
                 contentType='application/json'
             )
