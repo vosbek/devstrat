@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: ai-strategy-dev
+
+resources:
+  - namespace.yaml
+  - postgres.yaml
+  - redis.yaml
+  - api.yaml
+
+commonLabels:
+  environment: development
+  project: ai-strategy-hub
+
+images:
+  - name: localhost/ai-strategy-api
+    newTag: dev

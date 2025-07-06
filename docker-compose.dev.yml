@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database for local development
+  postgres-dev:
+    image: postgres:15-alpine
+    container_name: ai-strategy-postgres-dev
+    environment:
+      POSTGRES_DB: ai_strategy_dev
+      POSTGRES_USER: dev_user
+      POSTGRES_PASSWORD: dev_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+    networks:
+      - dev-network
+
+  # Redis for local development
+  redis-dev:
+    image: redis:7-alpine
+    container_name: ai-strategy-redis-dev
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_dev_data:/data
+    networks:
+      - dev-network
+
+  # FastAPI Backend for local development
+  api-dev:
+    build:
+      context: ./enterprise-ai-strategy/operational-layer
+      dockerfile: Dockerfile.dev
+    container_name: ai-strategy-api-dev
+    environment:
+      - DATABASE_URL=postgresql://dev_user:dev_password@postgres-dev:5432/ai_strategy_dev
+      - REDIS_URL=redis://redis-dev:6379/0
+      - JWT_SECRET=dev-jwt-secret-change-in-production
+      - LOG_LEVEL=DEBUG
+      - ENVIRONMENT=development
+      - CORS_ORIGINS=http://localhost:3000,http://localhost:8080
+    ports:
+      - "8001:8000"
+    depends_on:
+      - postgres-dev
+      - redis-dev
+    volumes:
+      - ./enterprise-ai-strategy/operational-layer:/app
+      - /app/node_modules
+    networks:
+      - dev-network
+
+volumes:
+  postgres_dev_data:
+  redis_dev_data:
+
+networks:
+  dev-network:
+    driver: bridge

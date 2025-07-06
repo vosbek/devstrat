@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ai-strategy-dev
+  labels:
+    name: ai-strategy-dev
+    environment: development
